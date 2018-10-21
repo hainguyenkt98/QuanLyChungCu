@@ -1,0 +1,78 @@
+﻿ IEnumerable<dynamic> data;
+        private Customer_Action cust_ac;
+        public fBlackList()
+        {
+            InitializeComponent();
+            cust_ac = new Customer_Action();
+            LoadData();
+        }
+        void windowsUIButtonPanel_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            if (e.Button.Properties.Caption == "Print") gridControl.ShowRibbonPrintPreview();
+            if (e.Button.Properties.Caption == "Delete")
+            {
+                bool isDel = false;
+                for (int i = 0; i < gridView.DataRowCount; i++)
+                {
+                    if (gridView.IsRowSelected(i))
+                    {
+                        DeleteRow(i);
+                        isDel = true;
+                    }
+                }
+                if (isDel)
+                {
+                    LoadData();
+                }
+            }
+            if (e.Button.Properties.Caption == "Add")
+            {
+                fWhiteList fwList = new fWhiteList();
+                fwList.EventAddCustomer += FwList_EventAddCustomer;
+                fwList.ShowDialog();
+            }
+            if (e.Button.Properties.Caption == "Refresh")
+            {
+                LoadData();
+            }
+        }
+
+        private void FwList_EventAddCustomer()
+        {
+            LoadData();
+        }
+
+        private void DeleteRow(int indexRow)
+        {
+            string phone = gridView.GetRowCellValue(indexRow, "Phone").ToString();
+            string name = gridView.GetRowCellValue(indexRow, "Name").ToString();
+            string address = gridView.GetRowCellValue(indexRow, "Address").ToString();
+            cust_ac.UpdateCustomer(phone, name, address, true, false);
+        }
+
+
+        void LoadData()
+        {
+            data = cust_ac.GetBlackList();
+            DataTable dt = new DataTable();
+            DataColumn dc1 = new DataColumn("Name", typeof(string));
+            DataColumn dc2 = new DataColumn("Phone", typeof(string));
+            DataColumn dc3 = new DataColumn("Address", typeof(string));
+            dt.Columns.Add(dc1);
+            dt.Columns.Add(dc2);
+            dt.Columns.Add(dc3);
+            foreach (var item in data)
+            {
+                DataRow row = dt.NewRow();
+                row[0] = item.name.ToString();
+                row[1] = item.phone.ToString();
+                Console.WriteLine(item.phone.ToString());
+                row[2] = item.address.ToString();
+                dt.Rows.Add(row);
+            }
+            gridControl.DataSource = dt;
+            gridView.Columns[0].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            gridView.Columns[1].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            gridView.Columns[2].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+
+        }
