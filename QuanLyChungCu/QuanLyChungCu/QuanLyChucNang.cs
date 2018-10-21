@@ -60,34 +60,19 @@ namespace QuanLyChungCu
             }
         }
 
-        //private void simpleButton1_Click(object sender, EventArgs e)
-        //{
-        //    if (!CheckExistForm("QuanLyNguoiDan"))
-        //    {
-        //        QuanLyNguoiDan xf2 = new QuanLyNguoiDan();
-        //        xf2.MdiParent = this;
-        //        xf2.Name = "QuanLyNguoiDan";
-        //        xf2.Show();
-        //    }
-        //    else
-        //    {
-        //        ActiveChildForm("QuanLyNguoiDan");
-        //    }
-        //}
-
-        //private void simpleButton2_Click(object sender, EventArgs e)
-        //{
-        //    if (!CheckExistForm("QuanLyNhanVien"))
-        //    {
-        //        QuanLyNhanVien xf2 = new QuanLyNhanVien();
-        //        xf2.MdiParent = this;
-        //        xf2.Name = "QuanLyNhanVien";
-        //        xf2.Show();
-        //    }
-        //    else
-        //    {
-        //        ActiveChildForm("QuanLyNhanVien");
-        //    }
-        //}
+        private void btnNguoiDan_Click(object sender, EventArgs e)
+        {
+            if (!CheckExistForm("fQuanLyNguoiDan"))
+            {
+                fQuanLyNguoiDan xf2 = new fQuanLyNguoiDan();
+                xf2.MdiParent = this;
+                xf2.Name = "fQuanLyNguoiDan";
+                xf2.Show();
+            }
+            else
+            {
+                ActiveChildForm("fQuanLyNguoiDan");
+            }
+        }
     }
 }

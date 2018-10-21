@@ -78,6 +78,12 @@
     <Compile Include="QuanLyChucNang.Designer.cs">
       <DependentUpon>QuanLyChucNang.cs</DependentUpon>
     </Compile>
+    <Compile Include="fQuanLyNguoiDan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fQuanLyNguoiDan.Designer.cs">
+      <DependentUpon>fQuanLyNguoiDan.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,6 +102,9 @@
     </Compile>
     <EmbeddedResource Include="QuanLyChucNang.resx">
       <DependentUpon>QuanLyChucNang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fQuanLyNguoiDan.resx">
+      <DependentUpon>fQuanLyNguoiDan.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

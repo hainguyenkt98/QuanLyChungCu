@@ -160,6 +160,7 @@
             this.btnNguoiDan.Name = "btnNguoiDan";
             this.btnNguoiDan.Size = new System.Drawing.Size(60, 60);
             this.btnNguoiDan.TabIndex = 0;
+            this.btnNguoiDan.Click += new System.EventHandler(this.btnNguoiDan_Click);
             // 
             // btnCanHo_DichVu
             // 
