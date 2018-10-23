@@ -13,6 +13,8 @@ namespace QuanLyChungCu
 {
     public partial class fQuanLyNhanVien : DevExpress.XtraEditors.XtraForm
     {
+        private bool loadLai = false;
+        private int rowSelecting = 0;
         public fQuanLyNhanVien()
         {
             InitializeComponent();
@@ -21,6 +23,11 @@ namespace QuanLyChungCu
         private void windowsUIButtonPanel_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
             if (e.Button.Properties.Caption == "In") gridControl.ShowRibbonPrintPreview();
+        }
+
+        private void gridControl_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

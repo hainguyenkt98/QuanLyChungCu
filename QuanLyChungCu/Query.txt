@@ -1,0 +1,6 @@
+CREATE FUNCTION layDanhSachNguoiDan()
+RETURNS TABLE
+AS
+RETURN 
+SELECT *
+FROM dbo.CanHo

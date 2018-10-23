@@ -11,9 +11,11 @@ using System.Windows.Forms;
 
 namespace QuanLyChungCu
 {
-    public partial class QuanLyChucNang : XtraForm
+    public partial class fQuanLyChucNang : XtraForm
     {
-        public QuanLyChucNang()
+        private fKetNoiDataBase ketNoiDB;
+        private fDangNhap dangNhap;
+        public fQuanLyChucNang()
         {
             InitializeComponent();
         }
@@ -73,6 +75,50 @@ namespace QuanLyChungCu
             {
                 ActiveChildForm("fQuanLyNguoiDan");
             }
+        }
+
+        private void kếtNốiDataBaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ketNoiDB = new fKetNoiDataBase();
+            ketNoiDB.StartPosition = FormStartPosition.CenterParent;
+            ketNoiDB.eventConnection += FKetNoiDB_eventConnection;
+            ketNoiDB.ShowDialog();
+        }
+        private void FKetNoiDB_eventConnection()
+        {
+            MessageBox.Show("Kết nối Database thành công, có thể đăng nhập !", "Thông báo !", MessageBoxButtons.OK);
+            PropertieConst.trangThaiKetNoiDB = true;
+            this.ketNoiDB.Close();
+            đăngNhậpToolStripMenuItem.Enabled = true;
+
+        }
+
+        private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dangNhap = new fDangNhap();
+            dangNhap.StartPosition = FormStartPosition.CenterParent;
+            dangNhap.eventDangNhap += DangNhap_eventDangNhap;
+            dangNhap.ShowDialog();
+        }
+
+        private void DangNhap_eventDangNhap()
+        {
+            this.dangNhap.Close();
+            đăngNhậpToolStripMenuItem.Enabled = false;
+            đăngXuấtToolStripMenuItem.Enabled = true;
+            pnNavBar.Enabled = true;
+            if(PropertieConst.quyen=="user")
+            {
+                btnUser.Enabled = false;
+                btnUser.Visible = false;
+            }
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PropertieConst.tenTaiKhoan = "";
+            PropertieConst.matKhau = "";
+            PropertieConst.quyen = "";
         }
     }
 }

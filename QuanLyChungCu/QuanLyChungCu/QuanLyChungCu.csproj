@@ -60,11 +60,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DangNhap.cs">
+    <Compile Include="DataLinq.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataLinq.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="fDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DangNhap.Designer.cs">
-      <DependentUpon>DangNhap.cs</DependentUpon>
+    <Compile Include="fDangNhap.Designer.cs">
+      <DependentUpon>fDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fKetNoiDataBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fKetNoiDataBase.Designer.cs">
+      <DependentUpon>fKetNoiDataBase.cs</DependentUpon>
     </Compile>
     <Compile Include="fQuanLyNhanVien.cs">
       <SubType>Form</SubType>
@@ -73,12 +84,13 @@
       <DependentUpon>fQuanLyNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="PropertieConst.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyChucNang.cs">
+    <Compile Include="fQuanLyChucNang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="QuanLyChucNang.Designer.cs">
-      <DependentUpon>QuanLyChucNang.cs</DependentUpon>
+    <Compile Include="fQuanLyChucNang.Designer.cs">
+      <DependentUpon>fQuanLyChucNang.cs</DependentUpon>
     </Compile>
     <Compile Include="fQuanLyNguoiDan.cs">
       <SubType>Form</SubType>
@@ -86,8 +98,14 @@
     <Compile Include="fQuanLyNguoiDan.Designer.cs">
       <DependentUpon>fQuanLyNguoiDan.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DangNhap.resx">
-      <DependentUpon>DangNhap.cs</DependentUpon>
+    <None Include="DataLinq.dbml.layout">
+      <DependentUpon>DataLinq.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="fDangNhap.resx">
+      <DependentUpon>fDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fKetNoiDataBase.resx">
+      <DependentUpon>fKetNoiDataBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fQuanLyNhanVien.resx">
       <DependentUpon>fQuanLyNhanVien.cs</DependentUpon>
@@ -102,12 +120,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="QuanLyChucNang.resx">
-      <DependentUpon>QuanLyChucNang.cs</DependentUpon>
+    <EmbeddedResource Include="fQuanLyChucNang.resx">
+      <DependentUpon>fQuanLyChucNang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fQuanLyNguoiDan.resx">
       <DependentUpon>fQuanLyNguoiDan.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataLinq.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataLinq.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
