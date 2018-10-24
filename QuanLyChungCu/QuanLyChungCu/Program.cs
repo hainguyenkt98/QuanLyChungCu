@@ -16,7 +16,7 @@ namespace QuanLyChungCu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fQuanLyNguoiDan());
+            Application.Run(new fQuanLyChucNang());
         }
     }
 }

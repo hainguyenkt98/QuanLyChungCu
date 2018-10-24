@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQuanLyChucNang));
             this.menuFunction = new System.Windows.Forms.MenuStrip();
             this.quảnTrịToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kếtNốiDataBaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngNhậpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,7 +45,6 @@
             this.btnCanHo = new DevExpress.XtraEditors.SimpleButton();
             this.btnNhanVien = new DevExpress.XtraEditors.SimpleButton();
             this.btnNguoiDan = new DevExpress.XtraEditors.SimpleButton();
-            this.kếtNốiDataBaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuFunction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnNavBar)).BeginInit();
@@ -73,11 +73,18 @@
             this.quảnTrịToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.quảnTrịToolStripMenuItem.Text = "Chức năng";
             // 
+            // kếtNốiDataBaseToolStripMenuItem
+            // 
+            this.kếtNốiDataBaseToolStripMenuItem.Name = "kếtNốiDataBaseToolStripMenuItem";
+            this.kếtNốiDataBaseToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.kếtNốiDataBaseToolStripMenuItem.Text = "Kết nối DataBase";
+            this.kếtNốiDataBaseToolStripMenuItem.Click += new System.EventHandler(this.kếtNốiDataBaseToolStripMenuItem_Click);
+            // 
             // đăngNhậpToolStripMenuItem
             // 
             this.đăngNhậpToolStripMenuItem.Enabled = false;
             this.đăngNhậpToolStripMenuItem.Name = "đăngNhậpToolStripMenuItem";
-            this.đăngNhậpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.đăngNhậpToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.đăngNhậpToolStripMenuItem.Text = "Đăng nhập";
             this.đăngNhậpToolStripMenuItem.Click += new System.EventHandler(this.đăngNhậpToolStripMenuItem_Click);
             // 
@@ -85,14 +92,14 @@
             // 
             this.đăngXuấtToolStripMenuItem.Enabled = false;
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.thoátToolStripMenuItem.Text = "Thoát";
             // 
             // thônTinPhầnMềmToolStripMenuItem
@@ -155,6 +162,7 @@
             this.btnCanHo.Name = "btnCanHo";
             this.btnCanHo.Size = new System.Drawing.Size(60, 60);
             this.btnCanHo.TabIndex = 2;
+            this.btnCanHo.Click += new System.EventHandler(this.btnCanHo_Click);
             // 
             // btnNhanVien
             // 
@@ -177,13 +185,6 @@
             this.btnNguoiDan.Size = new System.Drawing.Size(60, 60);
             this.btnNguoiDan.TabIndex = 0;
             this.btnNguoiDan.Click += new System.EventHandler(this.btnNguoiDan_Click);
-            // 
-            // kếtNốiDataBaseToolStripMenuItem
-            // 
-            this.kếtNốiDataBaseToolStripMenuItem.Name = "kếtNốiDataBaseToolStripMenuItem";
-            this.kếtNốiDataBaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.kếtNốiDataBaseToolStripMenuItem.Text = "Kết nối DataBase";
-            this.kếtNốiDataBaseToolStripMenuItem.Click += new System.EventHandler(this.kếtNốiDataBaseToolStripMenuItem_Click);
             // 
             // fQuanLyChucNang
             // 

@@ -207,6 +207,33 @@ namespace QuanLyChungCu
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.layDanhSachCanHoVaChuSoHuu", IsComposable=true)]
+		public IQueryable<layDanhSachCanHoVaChuSoHuuResult> layDanhSachCanHoVaChuSoHuu()
+		{
+			return this.CreateMethodCallQuery<layDanhSachCanHoVaChuSoHuuResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.xoaCanHo")]
+		public int xoaCanHo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.themCanHo")]
+		public int themCanHo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tang, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> songuoitoida, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string machusohuu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, tang, songuoitoida, machusohuu);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.capNhatCanHo")]
+		public int capNhatCanHo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tang, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> songuoitoida, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string machusohuu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, tang, songuoitoida, machusohuu);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CanHo")]
@@ -2271,6 +2298,104 @@ namespace QuanLyChungCu
 				if ((this._songuoiotoida != value))
 				{
 					this._songuoiotoida = value;
+				}
+			}
+		}
+	}
+	
+	public partial class layDanhSachCanHoVaChuSoHuuResult
+	{
+		
+		private string _ma;
+		
+		private int _tang;
+		
+		private int _songuoiotoida;
+		
+		private string _machuho;
+		
+		private string _ten;
+		
+		public layDanhSachCanHoVaChuSoHuuResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ma", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string ma
+		{
+			get
+			{
+				return this._ma;
+			}
+			set
+			{
+				if ((this._ma != value))
+				{
+					this._ma = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tang", DbType="Int NOT NULL")]
+		public int tang
+		{
+			get
+			{
+				return this._tang;
+			}
+			set
+			{
+				if ((this._tang != value))
+				{
+					this._tang = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_songuoiotoida", DbType="Int NOT NULL")]
+		public int songuoiotoida
+		{
+			get
+			{
+				return this._songuoiotoida;
+			}
+			set
+			{
+				if ((this._songuoiotoida != value))
+				{
+					this._songuoiotoida = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_machuho", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string machuho
+		{
+			get
+			{
+				return this._machuho;
+			}
+			set
+			{
+				if ((this._machuho != value))
+				{
+					this._machuho = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ten", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		public string ten
+		{
+			get
+			{
+				return this._ten;
+			}
+			set
+			{
+				if ((this._ten != value))
+				{
+					this._ten = value;
 				}
 			}
 		}

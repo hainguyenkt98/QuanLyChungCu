@@ -164,4 +164,31 @@
     <Parameter Name="ma" Type="System.String" DbType="NChar(10)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.layDanhSachCanHoVaChuSoHuu" Method="layDanhSachCanHoVaChuSoHuu" IsComposable="true">
+    <ElementType Name="layDanhSachCanHoVaChuSoHuuResult">
+      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="tang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="songuoiotoida" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="machuho" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ten" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.xoaCanHo" Method="xoaCanHo">
+    <Parameter Name="ma" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.themCanHo" Method="themCanHo">
+    <Parameter Name="ma" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="tang" Type="System.Int32" DbType="Int" />
+    <Parameter Name="songuoitoida" Type="System.Int32" DbType="Int" />
+    <Parameter Name="machusohuu" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.capNhatCanHo" Method="capNhatCanHo">
+    <Parameter Name="ma" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="tang" Type="System.Int32" DbType="Int" />
+    <Parameter Name="songuoitoida" Type="System.Int32" DbType="Int" />
+    <Parameter Name="machusohuu" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

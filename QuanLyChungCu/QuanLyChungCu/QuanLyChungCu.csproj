@@ -77,6 +77,12 @@
     <Compile Include="fKetNoiDataBase.Designer.cs">
       <DependentUpon>fKetNoiDataBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="fQuanLyCanHo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fQuanLyCanHo.Designer.cs">
+      <DependentUpon>fQuanLyCanHo.cs</DependentUpon>
+    </Compile>
     <Compile Include="fQuanLyNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fKetNoiDataBase.resx">
       <DependentUpon>fKetNoiDataBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fQuanLyCanHo.resx">
+      <DependentUpon>fQuanLyCanHo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fQuanLyNhanVien.resx">
       <DependentUpon>fQuanLyNhanVien.cs</DependentUpon>

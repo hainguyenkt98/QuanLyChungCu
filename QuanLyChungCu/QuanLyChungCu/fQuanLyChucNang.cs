@@ -120,5 +120,20 @@ namespace QuanLyChungCu
             PropertieConst.matKhau = "";
             PropertieConst.quyen = "";
         }
+
+        private void btnCanHo_Click(object sender, EventArgs e)
+        {
+            if (!CheckExistForm("fQuanLyCanHo"))
+            {
+                fQuanLyCanHo xf2 = new fQuanLyCanHo();
+                xf2.MdiParent = this;
+                xf2.Name = "fQuanLyCanHo";
+                xf2.Show();
+            }
+            else
+            {
+                ActiveChildForm("fQuanLyCanHo");
+            }
+        }
     }
 }
