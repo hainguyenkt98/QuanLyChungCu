@@ -114,15 +114,6 @@ namespace QuanLyChungCu
                         Sua();
                         break;
                     }
-                case "Tải lại":
-                    {
-                        if (isThem || isSua)
-                        {
-                            return;
-                        }
-                        LoadData();
-                        break;
-                    }
             }
         }
         private void Them()
