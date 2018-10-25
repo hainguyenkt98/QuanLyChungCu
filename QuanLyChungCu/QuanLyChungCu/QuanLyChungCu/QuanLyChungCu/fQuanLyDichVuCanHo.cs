@@ -11,7 +11,7 @@ using DevExpress.XtraEditors;
 
 namespace QuanLyChungCu
 {
-    public partial class fQuanLyCanHo : DevExpress.XtraEditors.XtraForm
+    public partial class fQuanLyDichVuCanHo : DevExpress.XtraEditors.XtraForm
     {
         bool isThem = false;
         bool isXoa = false;
@@ -20,22 +20,21 @@ namespace QuanLyChungCu
         private bool isReload = false;
         DataLinqDataContext context;
         DataTable dt;
-        public fQuanLyCanHo()
+        public fQuanLyDichVuCanHo()
         {
             InitializeComponent();
             context = new DataLinqDataContext(PropertieConst.connectionString);
             LoadData();
         }
-
         private void LoadData()
         {
-            var data = context.layDanhSachCanHoVaChuSoHuu();
+            var data = context.layDanhSachCanHoDichVu();
             DataTable dt = new DataTable();
-            DataColumn dc0 = new DataColumn("Mã", typeof(string));
+            DataColumn dc0 = new DataColumn("Mã căn hộ", typeof(string));
             DataColumn dc1 = new DataColumn("Tầng", typeof(string));
-            DataColumn dc2 = new DataColumn("Số người tối đa", typeof(string));
-            DataColumn dc3 = new DataColumn("Mã chủ hộ", typeof(string));
-            DataColumn dc4 = new DataColumn("Tên chủ hộ", typeof(string));
+            DataColumn dc2 = new DataColumn("Mã dịch vụ", typeof(string));
+            DataColumn dc3 = new DataColumn("Tên dich vụ", typeof(string));
+            DataColumn dc4 = new DataColumn("Chi phí/tháng", typeof(string));
             dt.Columns.Add(dc0);
             dt.Columns.Add(dc1);
             dt.Columns.Add(dc2);
@@ -45,14 +44,14 @@ namespace QuanLyChungCu
             foreach (var item in data)
             {
                 DataRow row = dt.NewRow();
-                row[0] = item.ma.ToString().Trim();
+                row[0] = item.maCH.ToString().Trim();
                 row[1] = item.tang.ToString().Trim();
-                row[2] = item.songuoiotoida.ToString().Trim();
-                row[3] = item.machuho.ToString().Trim();
-                row[4] = item.ten.ToString().Trim();
-
+                row[2] = item.maDV.ToString().Trim();
+                row[3] = item.ten.ToString().Trim();
+                row[4] = item.chiphi.ToString().Trim();
                 dt.Rows.Add(row);
-            }
+            } 
+            
             gridControl.DataSource = dt;
             gridView1.Columns[0].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             gridView1.Columns[1].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -109,63 +108,37 @@ namespace QuanLyChungCu
                     }
             }
         }
-        private void LoadChuHo()
-        {
-            cboMaChuHo.Items.Clear();
-            cboTenChuHo.Items.Clear();
-            var danhSachChuHo = context.layDanhSachNguoiDan();
-            foreach (var chuHo in danhSachChuHo)
-            {
-                cboMaChuHo.Items.Add(chuHo.ma.ToString().Trim());
-                cboTenChuHo.Items.Add(chuHo.ten.ToString().Trim());
-            }
-        }
-        private void LoadTang()
-        {
-            cboTang.Items.Clear();
-            var soTang = context.laySoTang();
-            for (int i = 1; i <= Convert.ToInt32(soTang); i++)
-            {
-                cboTang.Items.Add(i.ToString().Trim());
-            }
-        }
         private void Them()
         {
-            txtMa.Enabled = true;
             isThem = true;
             pnControlFor.Enabled = true;
             pnControlPri.Enabled = true;
-            LoadChuHo();
+            LoadDichVu();
+            //LoadCanHo();
             LoadTang();
         }
         private void Xoa()
         {
-            try
+            for (int i = 0; i < gridView1.DataRowCount; i++)
             {
-                for (int i = 0; i < gridView1.DataRowCount; i++)
+                if (gridView1.IsRowSelected(i))
                 {
-                    if (gridView1.IsRowSelected(i))
-                    {
-                        DeleteRow(i);
-                        isReload = true;
-                    }
-                }
-                if (isReload)
-                {
-                    LoadData();
-                    isReload = false;
+                    DeleteRow(i);
+                    isReload = true;
                 }
             }
-            catch
+            if (isReload)
             {
-                MessageBox.Show("Bạn đang xóa căn hộ đang được sở hữu, xem lại !", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                LoadData();
+                isReload = false;
             }
-
         }
+
         private void DeleteRow(int indexRow)
         {
-            string maCanHo = gridView1.GetRowCellValue(indexRow, "Mã").ToString().Trim();
-            context.xoaCanHo(maCanHo);
+            string maCanHo = gridView1.GetRowCellValue(indexRow, "Mã căn hộ").ToString().Trim();
+            string maDichVu = gridView1.GetRowCellValue(indexRow, "Mã dịch vụ").ToString().Trim();
+            context.xoaCanHoDichVu(maCanHo, maDichVu);
         }
         private void Sua()
         {
@@ -174,16 +147,17 @@ namespace QuanLyChungCu
                 if (gridView1.IsRowSelected(i))
                 {
                     isSua = true;
-                    LoadChuHo();
+                    LoadDichVu();
+                    //LoadCanHo();
                     LoadTang();
 
                     rowSelecting = i;
-                    txtMa.Text = gridView1.GetRowCellValue(i, "Mã").ToString().Trim();
-                    cboTang.Text = gridView1.GetRowCellValue(i, "Tầng").ToString().Trim();
-                    cboSoNguoiToiDa.Text = gridView1.GetRowCellValue(i, "Số người tối đa").ToString().Trim();
-                    cboMaChuHo.Text = gridView1.GetRowCellValue(i, "Mã chủ hộ").ToString().Trim();
-                    cboTenChuHo.Text = gridView1.GetRowCellValue(i, "Tên chủ hộ").ToString().Trim();
+                    cboMaDichVu.Text = gridView1.GetRowCellValue(i, "Mã dịch vụ").ToString().Trim();
+                    cboTenDichVu.Text = gridView1.GetRowCellValue(i, "Tên dịch vụ").ToString().Trim();
+                    txtChiPhi.Text = gridView1.GetRowCellValue(i, "Chi phí/tháng").ToString().Trim();
 
+                    cboMaCanHo.Text = gridView1.GetRowCellValue(i, "Mã căn hộ").ToString().Trim();
+                    cboTang.Text = gridView1.GetRowCellValue(i, "Tầng").ToString().Trim();
                     pnControlFor.Enabled = true;
                     pnControlPri.Enabled = true;
 
@@ -194,27 +168,17 @@ namespace QuanLyChungCu
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            try
+            if (isSua)
             {
-                if (isSua)
-                {
-                    context.capNhatCanHo(txtMa.Text.Trim(), Convert.ToInt16(cboTang.Text.Trim()), Convert.ToInt16(cboSoNguoiToiDa.Text.Trim()), cboMaChuHo.Text.Trim());
-                    isSua = false;
-                }
-                if (isThem)
-                {
-                    context.themCanHo(txtMa.Text.Trim(), Convert.ToInt16(cboTang.Text.Trim()), Convert.ToInt16(cboSoNguoiToiDa.Text.Trim()), cboMaChuHo.Text.Trim());
-                    isThem = false;
-                    txtMa.Enabled = false;
-                }
-                LoadData();
-                isReload = false;
-                btnHuy_Click(null, null);
+                string maCanHo = cboMaDichVu.Text.Trim();
+                string maDichVu = cboMaCanHo.Text.Trim();
+                context.capNhatCanHoDichVu(maCanHo, maDichVu);
             }
-            catch (Exception ex)
+            if (isThem)
             {
-                string s = ex.Message.ToString();
-                MessageBox.Show("Thông tin không nhập vào không chính xác !", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string maCanHo = cboMaCanHo.Text.Trim();
+                string maDichVu = cboMaDichVu.Text.Trim();
+                context.themCanHoDichVu(maCanHo, maDichVu);
             }
         }
 
@@ -227,29 +191,73 @@ namespace QuanLyChungCu
             isSua = false;
             isXoa = false;
 
-            txtMa.Text = "";
+            cboMaDichVu.Text = "";
+            txtChiPhi.Text = "";
+            cboTenDichVu.Text = "";
+            cboMaCanHo.Text = "";
             cboTang.Text = "";
-            cboTang.Text = "";
-            cboTenChuHo.Text = "";
-            cboMaChuHo.Text = "";
-            cboSoNguoiToiDa.Text = "";
+        }
+        private void LoadCanHo()
+        {
+            var danhSachCanho = context.layDanhSachCanHo();
+            cboMaCanHo.Items.Clear();
+            cboTang.Items.Clear();
+            foreach (var ch in danhSachCanho)
+            {
+                cboMaCanHo.Items.Add(ch.ma.ToString().Trim());
+            }
         }
 
-        private void cboMaChuHo_SelectedIndexChanged(object sender, EventArgs e)
+        private void LoadTang()
         {
-            int indexChange = cboMaChuHo.SelectedIndex;
-            cboTenChuHo.SelectedIndex = indexChange;
+            cboTang.Items.Clear();
+            var soTang = context.laySoTang();
+            for (int i = 1; i <= Convert.ToInt32(soTang); i++)
+            {
+                cboTang.Items.Add(i.ToString().Trim());
+            }
         }
 
-        private void cboTenChuHo_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboTang_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int indexChange = cboTenChuHo.SelectedIndex;
-            cboMaChuHo.SelectedIndex = indexChange;
+            int indexChange = cboTang.SelectedIndex;
+            var danhSachCanHoTheoTang = context.layDanhSachCanHoTheoTang(Convert.ToInt16(cboTang.Text.Trim()));
+            cboMaCanHo.Items.Clear();
+            foreach (var ch in danhSachCanHoTheoTang)
+            {
+                cboMaCanHo.Items.Add(ch.ma.ToString().Trim());
+            }
+        }
+        private void LoadDichVu()
+        {
+            var danhSachDichVu = context.layDanhSachDichVu();
+            foreach (var dv in danhSachDichVu)
+            {
+                cboDVItem item = new cboDVItem();
+                item.MaDV = dv.ma.ToString().Trim();
+                item.TenDV = dv.ten.ToString().Trim();
+                item.ChiphiDV = dv.chiphi.ToString().Trim();
+
+                cboMaDichVu.Items.Add(item);
+                cboTenDichVu.Items.Add(dv.ten.ToString().Trim());
+            }
+
         }
 
-        private void cboSoNguoiToiDa_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboMaDichVu_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int indexChange = cboMaDichVu.SelectedIndex;
+            cboTenDichVu.SelectedIndex = indexChange;
 
+            txtChiPhi.Text = ((cboDVItem)cboMaDichVu.Items[indexChange]).ChiphiDV;
+        }
+
+        private void cboTenDichVu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int indexChange = cboTenDichVu.SelectedIndex;
+            cboMaDichVu.SelectedIndex = indexChange;
+
+            txtChiPhi.Text = ((cboDVItem)cboMaDichVu.Items[indexChange]).ChiphiDV;
         }
     }
 }

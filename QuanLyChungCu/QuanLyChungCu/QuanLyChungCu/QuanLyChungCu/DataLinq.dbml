@@ -191,4 +191,35 @@
     <Parameter Name="machusohuu" Type="System.String" DbType="NChar(10)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.layDanhSachCanHoDichVu" Method="layDanhSachCanHoDichVu" IsComposable="true">
+    <ElementType Name="layDanhSachCanHoDichVuResult">
+      <Column Name="maCH" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="tang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="maDV" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="ten" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="chiphi" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.xoaCanHoDichVu" Method="xoaCanHoDichVu">
+    <Parameter Name="maCanHo" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="maDichVu" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.capNhatCanHoDichVu" Method="capNhatCanHoDichVu">
+    <Parameter Name="maCanHo" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="maDichVu" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.themCanHoDichVu" Method="themCanHoDichVu">
+    <Parameter Name="maCanHo" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="maDichVu" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.layDanhSachDichVu" Method="layDanhSachDichVu" IsComposable="true">
+    <ElementType Name="layDanhSachDichVuResult">
+      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ten" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="chiphi" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
 </Database>
