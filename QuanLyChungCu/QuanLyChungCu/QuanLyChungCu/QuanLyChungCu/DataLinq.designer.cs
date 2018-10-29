@@ -235,6 +235,7 @@ namespace QuanLyChungCu
 			return ((int)(result.ReturnValue));
 		}
 		
+<<<<<<< HEAD
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.themNhanVien")]
 		public int themNhanVien([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string gioitinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaysinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string diachi, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string sdt, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maquanli, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string machucvu)
 		{
@@ -260,6 +261,39 @@ namespace QuanLyChungCu
 		public IQueryable<layDanhSachNhanVienResult> layDanhSachNhanVien()
 		{
 			return this.CreateMethodCallQuery<layDanhSachNhanVienResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+=======
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.layDanhSachCanHoDichVu", IsComposable=true)]
+		public IQueryable<layDanhSachCanHoDichVuResult> layDanhSachCanHoDichVu()
+		{
+			return this.CreateMethodCallQuery<layDanhSachCanHoDichVuResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.xoaCanHoDichVu")]
+		public int xoaCanHoDichVu([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maCanHo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maDichVu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maCanHo, maDichVu);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.capNhatCanHoDichVu")]
+		public int capNhatCanHoDichVu([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maCanHo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maDichVu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maCanHo, maDichVu);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.themCanHoDichVu")]
+		public int themCanHoDichVu([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maCanHo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maDichVu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maCanHo, maDichVu);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.layDanhSachDichVu", IsComposable=true)]
+		public IQueryable<layDanhSachDichVuResult> layDanhSachDichVu()
+		{
+			return this.CreateMethodCallQuery<layDanhSachDichVuResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+>>>>>>> 0f7cfdd805726c7e42d8ad0312d6ea6fbc5d1ae0
 		}
 	}
 	
@@ -2428,6 +2462,7 @@ namespace QuanLyChungCu
 		}
 	}
 	
+<<<<<<< HEAD
 	public partial class layDanhSachNhanVienResult
 	{
 		
@@ -2463,10 +2498,42 @@ namespace QuanLyChungCu
 				if ((this._ma != value))
 				{
 					this._ma = value;
+=======
+	public partial class layDanhSachCanHoDichVuResult
+	{
+		
+		private string _maCH;
+		
+		private int _tang;
+		
+		private string _maDV;
+		
+		private string _ten;
+		
+		private System.Nullable<decimal> _chiphi;
+		
+		public layDanhSachCanHoDichVuResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maCH", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string maCH
+		{
+			get
+			{
+				return this._maCH;
+			}
+			set
+			{
+				if ((this._maCH != value))
+				{
+					this._maCH = value;
+>>>>>>> 0f7cfdd805726c7e42d8ad0312d6ea6fbc5d1ae0
 				}
 			}
 		}
 		
+<<<<<<< HEAD
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ten", DbType="NChar(30) NOT NULL", CanBeNull=false)]
 		public string ten
 		{
@@ -2479,10 +2546,25 @@ namespace QuanLyChungCu
 				if ((this._ten != value))
 				{
 					this._ten = value;
+=======
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tang", DbType="Int NOT NULL")]
+		public int tang
+		{
+			get
+			{
+				return this._tang;
+			}
+			set
+			{
+				if ((this._tang != value))
+				{
+					this._tang = value;
+>>>>>>> 0f7cfdd805726c7e42d8ad0312d6ea6fbc5d1ae0
 				}
 			}
 		}
 		
+<<<<<<< HEAD
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gioitinh", DbType="NChar(10) NOT NULL", CanBeNull=false)]
 		public string gioitinh
 		{
@@ -2495,10 +2577,25 @@ namespace QuanLyChungCu
 				if ((this._gioitinh != value))
 				{
 					this._gioitinh = value;
+=======
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maDV", DbType="NChar(10)")]
+		public string maDV
+		{
+			get
+			{
+				return this._maDV;
+			}
+			set
+			{
+				if ((this._maDV != value))
+				{
+					this._maDV = value;
+>>>>>>> 0f7cfdd805726c7e42d8ad0312d6ea6fbc5d1ae0
 				}
 			}
 		}
 		
+<<<<<<< HEAD
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngaysinh", DbType="Date NOT NULL")]
 		public System.DateTime ngaysinh
 		{
@@ -2511,10 +2608,25 @@ namespace QuanLyChungCu
 				if ((this._ngaysinh != value))
 				{
 					this._ngaysinh = value;
+=======
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ten", DbType="NChar(30)")]
+		public string ten
+		{
+			get
+			{
+				return this._ten;
+			}
+			set
+			{
+				if ((this._ten != value))
+				{
+					this._ten = value;
+>>>>>>> 0f7cfdd805726c7e42d8ad0312d6ea6fbc5d1ae0
 				}
 			}
 		}
 		
+<<<<<<< HEAD
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diachi", DbType="NChar(20) NOT NULL", CanBeNull=false)]
 		public string diachi
 		{
@@ -2543,10 +2655,55 @@ namespace QuanLyChungCu
 				if ((this._sodienthoai != value))
 				{
 					this._sodienthoai = value;
+=======
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_chiphi", DbType="Money")]
+		public System.Nullable<decimal> chiphi
+		{
+			get
+			{
+				return this._chiphi;
+			}
+			set
+			{
+				if ((this._chiphi != value))
+				{
+					this._chiphi = value;
+				}
+			}
+		}
+	}
+	
+	public partial class layDanhSachDichVuResult
+	{
+		
+		private string _ma;
+		
+		private string _ten;
+		
+		private decimal _chiphi;
+		
+		public layDanhSachDichVuResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ma", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string ma
+		{
+			get
+			{
+				return this._ma;
+			}
+			set
+			{
+				if ((this._ma != value))
+				{
+					this._ma = value;
+>>>>>>> 0f7cfdd805726c7e42d8ad0312d6ea6fbc5d1ae0
 				}
 			}
 		}
 		
+<<<<<<< HEAD
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maquanly", DbType="NChar(10)")]
 		public string maquanly
 		{
@@ -2559,10 +2716,25 @@ namespace QuanLyChungCu
 				if ((this._maquanly != value))
 				{
 					this._maquanly = value;
+=======
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ten", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		public string ten
+		{
+			get
+			{
+				return this._ten;
+			}
+			set
+			{
+				if ((this._ten != value))
+				{
+					this._ten = value;
+>>>>>>> 0f7cfdd805726c7e42d8ad0312d6ea6fbc5d1ae0
 				}
 			}
 		}
 		
+<<<<<<< HEAD
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_machucvu", DbType="NChar(10)")]
 		public string machucvu
 		{
@@ -2575,6 +2747,20 @@ namespace QuanLyChungCu
 				if ((this._machucvu != value))
 				{
 					this._machucvu = value;
+=======
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_chiphi", DbType="Money NOT NULL")]
+		public decimal chiphi
+		{
+			get
+			{
+				return this._chiphi;
+			}
+			set
+			{
+				if ((this._chiphi != value))
+				{
+					this._chiphi = value;
+>>>>>>> 0f7cfdd805726c7e42d8ad0312d6ea6fbc5d1ae0
 				}
 			}
 		}

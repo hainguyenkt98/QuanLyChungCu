@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cboDVItem.cs" />
     <Compile Include="DataLinq.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -110,6 +111,15 @@
     <Compile Include="fQuanLyNguoiDan.Designer.cs">
       <DependentUpon>fQuanLyNguoiDan.cs</DependentUpon>
     </Compile>
+    <Compile Include="fQuanLyDichVuCanHo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fQuanLyDichVuCanHo.Designer.cs">
+      <DependentUpon>fQuanLyDichVuCanHo.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="fQuanLyDichVuCanHo.resx">
+      <DependentUpon>fQuanLyDichVuCanHo.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DataLinq.dbml.layout">
       <DependentUpon>DataLinq.dbml</DependentUpon>
     </None>

@@ -191,6 +191,7 @@
     <Parameter Name="machusohuu" Type="System.String" DbType="NChar(10)" />
     <Return Type="System.Int32" />
   </Function>
+<<<<<<< HEAD
   <Function Name="dbo.themNhanVien" Method="themNhanVien">
     <Parameter Name="ma" Type="System.String" DbType="NChar(10)" />
     <Parameter Name="ten" Type="System.String" DbType="NChar(30)" />
@@ -227,6 +228,37 @@
       <Column Name="sodienthoai" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="maquanly" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="machucvu" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+=======
+  <Function Name="dbo.layDanhSachCanHoDichVu" Method="layDanhSachCanHoDichVu" IsComposable="true">
+    <ElementType Name="layDanhSachCanHoDichVuResult">
+      <Column Name="maCH" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="tang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="maDV" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="ten" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="chiphi" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.xoaCanHoDichVu" Method="xoaCanHoDichVu">
+    <Parameter Name="maCanHo" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="maDichVu" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.capNhatCanHoDichVu" Method="capNhatCanHoDichVu">
+    <Parameter Name="maCanHo" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="maDichVu" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.themCanHoDichVu" Method="themCanHoDichVu">
+    <Parameter Name="maCanHo" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="maDichVu" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.layDanhSachDichVu" Method="layDanhSachDichVu" IsComposable="true">
+    <ElementType Name="layDanhSachDichVuResult">
+      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ten" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="chiphi" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+>>>>>>> 0f7cfdd805726c7e42d8ad0312d6ea6fbc5d1ae0
     </ElementType>
   </Function>
 </Database>
