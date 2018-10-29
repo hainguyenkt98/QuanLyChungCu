@@ -191,4 +191,42 @@
     <Parameter Name="machusohuu" Type="System.String" DbType="NChar(10)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.themNhanVien" Method="themNhanVien">
+    <Parameter Name="ma" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="ten" Type="System.String" DbType="NChar(30)" />
+    <Parameter Name="gioitinh" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="ngaysinh" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="diachi" Type="System.String" DbType="NChar(30)" />
+    <Parameter Name="sdt" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="maquanli" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="machucvu" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.capnhapNhanVien" Method="capnhapNhanVien">
+    <Parameter Name="ma" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="ten" Type="System.String" DbType="NChar(30)" />
+    <Parameter Name="gioitinh" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="ngaysinh" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="diachi" Type="System.String" DbType="NChar(30)" />
+    <Parameter Name="sdt" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="maquanli" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="machucvu" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.xoaNhanVien" Method="xoaNhanVien">
+    <Parameter Name="ma" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.layDanhSachNhanVien" Method="layDanhSachNhanVien" IsComposable="true">
+    <ElementType Name="layDanhSachNhanVienResult">
+      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ten" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="gioitinh" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ngaysinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="diachi" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="sodienthoai" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="maquanly" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="machucvu" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

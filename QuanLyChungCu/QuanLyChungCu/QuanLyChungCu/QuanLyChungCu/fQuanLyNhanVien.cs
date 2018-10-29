@@ -29,5 +29,20 @@ namespace QuanLyChungCu
         {
             
         }
+
+        private void fQuanLyNhanVien_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelControl2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void windowsUIButtonPanel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

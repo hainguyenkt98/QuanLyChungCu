@@ -28,15 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQuanLyNhanVien));
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.pnInfo = new DevExpress.XtraEditors.PanelControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.pnControlFor = new DevExpress.XtraEditors.PanelControl();
+            this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
+            this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
+            this.cboChucVu = new System.Windows.Forms.ComboBox();
+            this.cboNguoiQuanLi = new System.Windows.Forms.ComboBox();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.pnControlPri = new DevExpress.XtraEditors.PanelControl();
+            this.dtNgaySinh = new DevExpress.XtraEditors.DateEdit();
+            this.cboGioiTinh = new System.Windows.Forms.ComboBox();
+            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.txtDiaChi = new DevExpress.XtraEditors.TextEdit();
+            this.txtTen = new DevExpress.XtraEditors.TextEdit();
+            this.txtMa = new DevExpress.XtraEditors.TextEdit();
+            this.txtSDT = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -47,8 +65,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pnInfo)).BeginInit();
             this.pnInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pnControlFor)).BeginInit();
+            this.pnControlFor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pnControlPri)).BeginInit();
+            this.pnControlPri.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtNgaySinh.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtNgaySinh.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
@@ -62,8 +88,8 @@
             this.pnInfo.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.pnInfo.Appearance.Options.UseBackColor = true;
             this.pnInfo.Controls.Add(this.panelControl6);
-            this.pnInfo.Controls.Add(this.panelControl2);
-            this.pnInfo.Controls.Add(this.panelControl4);
+            this.pnInfo.Controls.Add(this.pnControlFor);
+            this.pnInfo.Controls.Add(this.pnControlPri);
             this.pnInfo.Controls.Add(this.panelControl5);
             this.pnInfo.Controls.Add(this.panelControl3);
             this.pnInfo.Dock = System.Windows.Forms.DockStyle.Left;
@@ -77,30 +103,227 @@
             this.panelControl6.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.panelControl6.Appearance.Options.UseBackColor = true;
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl6.Location = new System.Drawing.Point(2, 362);
+            this.panelControl6.Location = new System.Drawing.Point(2, 301);
             this.panelControl6.Name = "panelControl6";
             this.panelControl6.Size = new System.Drawing.Size(239, 10);
             this.panelControl6.TabIndex = 6;
             // 
-            // panelControl2
+            // pnControlFor
             // 
-            this.panelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
-            this.panelControl2.Appearance.Options.UseBackColor = true;
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl2.Location = new System.Drawing.Point(2, 372);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(239, 87);
-            this.panelControl2.TabIndex = 5;
+            this.pnControlFor.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.pnControlFor.Appearance.Options.UseBackColor = true;
+            this.pnControlFor.Controls.Add(this.btnHuy);
+            this.pnControlFor.Controls.Add(this.btnLuu);
+            this.pnControlFor.Controls.Add(this.cboChucVu);
+            this.pnControlFor.Controls.Add(this.cboNguoiQuanLi);
+            this.pnControlFor.Controls.Add(this.labelControl9);
+            this.pnControlFor.Controls.Add(this.labelControl8);
+            this.pnControlFor.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnControlFor.Location = new System.Drawing.Point(2, 311);
+            this.pnControlFor.Name = "pnControlFor";
+            this.pnControlFor.Size = new System.Drawing.Size(239, 148);
+            this.pnControlFor.TabIndex = 5;
             // 
-            // panelControl4
+            // btnHuy
             // 
-            this.panelControl4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
-            this.panelControl4.Appearance.Options.UseBackColor = true;
-            this.panelControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl4.Location = new System.Drawing.Point(2, 43);
-            this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(239, 416);
-            this.panelControl4.TabIndex = 4;
+            this.btnHuy.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.btnHuy.Appearance.Options.UseFont = true;
+            this.btnHuy.Appearance.Options.UseForeColor = true;
+            this.btnHuy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.ImageOptions.Image")));
+            this.btnHuy.Location = new System.Drawing.Point(139, 105);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(75, 23);
+            this.btnHuy.TabIndex = 26;
+            this.btnHuy.Text = "Hủy";
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnLuu.Appearance.Options.UseFont = true;
+            this.btnLuu.Appearance.Options.UseForeColor = true;
+            this.btnLuu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.ImageOptions.Image")));
+            this.btnLuu.Location = new System.Drawing.Point(35, 105);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(75, 23);
+            this.btnLuu.TabIndex = 25;
+            this.btnLuu.Text = "Lưu";
+            // 
+            // cboChucVu
+            // 
+            this.cboChucVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboChucVu.FormattingEnabled = true;
+            this.cboChucVu.Location = new System.Drawing.Point(95, 62);
+            this.cboChucVu.Name = "cboChucVu";
+            this.cboChucVu.Size = new System.Drawing.Size(139, 21);
+            this.cboChucVu.TabIndex = 24;
+            // 
+            // cboNguoiQuanLi
+            // 
+            this.cboNguoiQuanLi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboNguoiQuanLi.FormattingEnabled = true;
+            this.cboNguoiQuanLi.Location = new System.Drawing.Point(95, 24);
+            this.cboNguoiQuanLi.Name = "cboNguoiQuanLi";
+            this.cboNguoiQuanLi.Size = new System.Drawing.Size(139, 21);
+            this.cboNguoiQuanLi.TabIndex = 23;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelControl9.Appearance.Options.UseForeColor = true;
+            this.labelControl9.Location = new System.Drawing.Point(35, 70);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(40, 13);
+            this.labelControl9.TabIndex = 16;
+            this.labelControl9.Text = "Chức vụ";
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelControl8.Appearance.Options.UseForeColor = true;
+            this.labelControl8.Location = new System.Drawing.Point(20, 32);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(62, 13);
+            this.labelControl8.TabIndex = 15;
+            this.labelControl8.Text = "Người quản lí";
+            // 
+            // pnControlPri
+            // 
+            this.pnControlPri.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.pnControlPri.Appearance.Options.UseBackColor = true;
+            this.pnControlPri.Controls.Add(this.dtNgaySinh);
+            this.pnControlPri.Controls.Add(this.cboGioiTinh);
+            this.pnControlPri.Controls.Add(this.textEdit4);
+            this.pnControlPri.Controls.Add(this.txtDiaChi);
+            this.pnControlPri.Controls.Add(this.txtTen);
+            this.pnControlPri.Controls.Add(this.txtMa);
+            this.pnControlPri.Controls.Add(this.txtSDT);
+            this.pnControlPri.Controls.Add(this.labelControl6);
+            this.pnControlPri.Controls.Add(this.labelControl5);
+            this.pnControlPri.Controls.Add(this.labelControl4);
+            this.pnControlPri.Controls.Add(this.labelControl3);
+            this.pnControlPri.Controls.Add(this.labelControl2);
+            this.pnControlPri.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnControlPri.Location = new System.Drawing.Point(2, 43);
+            this.pnControlPri.Name = "pnControlPri";
+            this.pnControlPri.Size = new System.Drawing.Size(239, 416);
+            this.pnControlPri.TabIndex = 4;
+            // 
+            // dtNgaySinh
+            // 
+            this.dtNgaySinh.EditValue = null;
+            this.dtNgaySinh.Location = new System.Drawing.Point(95, 123);
+            this.dtNgaySinh.Name = "dtNgaySinh";
+            this.dtNgaySinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtNgaySinh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtNgaySinh.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.dtNgaySinh.Size = new System.Drawing.Size(100, 20);
+            this.dtNgaySinh.TabIndex = 22;
+            // 
+            // cboGioiTinh
+            // 
+            this.cboGioiTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboGioiTinh.FormattingEnabled = true;
+            this.cboGioiTinh.Location = new System.Drawing.Point(95, 87);
+            this.cboGioiTinh.Name = "cboGioiTinh";
+            this.cboGioiTinh.Size = new System.Drawing.Size(100, 21);
+            this.cboGioiTinh.TabIndex = 21;
+            // 
+            // textEdit4
+            // 
+            this.textEdit4.Enabled = false;
+            this.textEdit4.Location = new System.Drawing.Point(95, 195);
+            this.textEdit4.Name = "textEdit4";
+            this.textEdit4.Size = new System.Drawing.Size(139, 20);
+            this.textEdit4.TabIndex = 20;
+            // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.Enabled = false;
+            this.txtDiaChi.Location = new System.Drawing.Point(95, 158);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(139, 20);
+            this.txtDiaChi.TabIndex = 19;
+            // 
+            // txtTen
+            // 
+            this.txtTen.Enabled = false;
+            this.txtTen.Location = new System.Drawing.Point(95, 53);
+            this.txtTen.Name = "txtTen";
+            this.txtTen.Size = new System.Drawing.Size(139, 20);
+            this.txtTen.TabIndex = 16;
+            // 
+            // txtMa
+            // 
+            this.txtMa.Enabled = false;
+            this.txtMa.Location = new System.Drawing.Point(95, 19);
+            this.txtMa.Name = "txtMa";
+            this.txtMa.Size = new System.Drawing.Size(139, 20);
+            this.txtMa.TabIndex = 15;
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtSDT.Appearance.Options.UseForeColor = true;
+            this.txtSDT.Location = new System.Drawing.Point(20, 202);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(62, 13);
+            this.txtSDT.TabIndex = 14;
+            this.txtSDT.Text = "Số điện thoại";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelControl6.Appearance.Options.UseForeColor = true;
+            this.labelControl6.Location = new System.Drawing.Point(35, 130);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(47, 13);
+            this.labelControl6.TabIndex = 13;
+            this.labelControl6.Text = "Ngày sinh";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelControl5.Appearance.Options.UseForeColor = true;
+            this.labelControl5.Location = new System.Drawing.Point(50, 165);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(32, 13);
+            this.labelControl5.TabIndex = 12;
+            this.labelControl5.Text = "Địa chỉ";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelControl4.Appearance.Options.UseForeColor = true;
+            this.labelControl4.Location = new System.Drawing.Point(42, 95);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(38, 13);
+            this.labelControl4.TabIndex = 11;
+            this.labelControl4.Text = "Giới tính";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelControl3.Appearance.Options.UseForeColor = true;
+            this.labelControl3.Location = new System.Drawing.Point(64, 60);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(18, 13);
+            this.labelControl3.TabIndex = 10;
+            this.labelControl3.Text = "Tên";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelControl2.Appearance.Options.UseForeColor = true;
+            this.labelControl2.Location = new System.Drawing.Point(68, 26);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(14, 13);
+            this.labelControl2.TabIndex = 9;
+            this.labelControl2.Text = "Mã";
+            this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
             // 
             // panelControl5
             // 
@@ -173,6 +396,7 @@
             this.windowsUIButtonPanel.Text = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel.UseButtonBackgroundImages = false;
             this.windowsUIButtonPanel.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel_ButtonClick);
+            this.windowsUIButtonPanel.Click += new System.EventHandler(this.windowsUIButtonPanel_Click);
             // 
             // gridControl
             // 
@@ -204,11 +428,22 @@
             this.Controls.Add(this.pnInfo);
             this.Name = "fQuanLyNhanVien";
             this.Text = "Quản lý nhân viên";
+            this.Load += new System.EventHandler(this.fQuanLyNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pnInfo)).EndInit();
             this.pnInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pnControlFor)).EndInit();
+            this.pnControlFor.ResumeLayout(false);
+            this.pnControlFor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pnControlPri)).EndInit();
+            this.pnControlPri.ResumeLayout(false);
+            this.pnControlPri.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtNgaySinh.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtNgaySinh.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
@@ -227,10 +462,28 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl3;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.PanelControl panelControl4;
+        private DevExpress.XtraEditors.PanelControl pnControlFor;
+        private DevExpress.XtraEditors.PanelControl pnControlPri;
         private DevExpress.XtraEditors.PanelControl panelControl5;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl6;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl txtSDT;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.TextEdit txtMa;
+        private DevExpress.XtraEditors.TextEdit txtTen;
+        private DevExpress.XtraEditors.TextEdit txtDiaChi;
+        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private System.Windows.Forms.ComboBox cboGioiTinh;
+        private DevExpress.XtraEditors.DateEdit dtNgaySinh;
+        private System.Windows.Forms.ComboBox cboChucVu;
+        private System.Windows.Forms.ComboBox cboNguoiQuanLi;
+        private DevExpress.XtraEditors.SimpleButton btnLuu;
+        private DevExpress.XtraEditors.SimpleButton btnHuy;
     }
 }

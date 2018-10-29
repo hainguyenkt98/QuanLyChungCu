@@ -480,6 +480,7 @@
             this.Controls.Add(this.pnInfo);
             this.Name = "fQuanLyNguoiDan";
             this.Text = "Quản lý người dân";
+            this.Load += new System.EventHandler(this.fQuanLyNguoiDan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pnInfo)).EndInit();
             this.pnInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();

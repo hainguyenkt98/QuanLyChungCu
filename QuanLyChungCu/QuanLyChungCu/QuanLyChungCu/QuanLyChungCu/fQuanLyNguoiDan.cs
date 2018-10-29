@@ -269,5 +269,10 @@ namespace QuanLyChungCu
         {
             LoadCanHo(Convert.ToInt16(cboTang.Text));
         }
+
+        private void fQuanLyNguoiDan_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -234,6 +234,33 @@ namespace QuanLyChungCu
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, tang, songuoitoida, machusohuu);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.themNhanVien")]
+		public int themNhanVien([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string gioitinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaysinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string diachi, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string sdt, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maquanli, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string machucvu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, ten, gioitinh, ngaysinh, diachi, sdt, maquanli, machucvu);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.capnhapNhanVien")]
+		public int capnhapNhanVien([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string gioitinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaysinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string diachi, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string sdt, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maquanli, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string machucvu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, ten, gioitinh, ngaysinh, diachi, sdt, maquanli, machucvu);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.xoaNhanVien")]
+		public int xoaNhanVien([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.layDanhSachNhanVien", IsComposable=true)]
+		public IQueryable<layDanhSachNhanVienResult> layDanhSachNhanVien()
+		{
+			return this.CreateMethodCallQuery<layDanhSachNhanVienResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CanHo")]
@@ -2396,6 +2423,158 @@ namespace QuanLyChungCu
 				if ((this._ten != value))
 				{
 					this._ten = value;
+				}
+			}
+		}
+	}
+	
+	public partial class layDanhSachNhanVienResult
+	{
+		
+		private string _ma;
+		
+		private string _ten;
+		
+		private string _gioitinh;
+		
+		private System.DateTime _ngaysinh;
+		
+		private string _diachi;
+		
+		private string _sodienthoai;
+		
+		private string _maquanly;
+		
+		private string _machucvu;
+		
+		public layDanhSachNhanVienResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ma", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string ma
+		{
+			get
+			{
+				return this._ma;
+			}
+			set
+			{
+				if ((this._ma != value))
+				{
+					this._ma = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ten", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		public string ten
+		{
+			get
+			{
+				return this._ten;
+			}
+			set
+			{
+				if ((this._ten != value))
+				{
+					this._ten = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gioitinh", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string gioitinh
+		{
+			get
+			{
+				return this._gioitinh;
+			}
+			set
+			{
+				if ((this._gioitinh != value))
+				{
+					this._gioitinh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngaysinh", DbType="Date NOT NULL")]
+		public System.DateTime ngaysinh
+		{
+			get
+			{
+				return this._ngaysinh;
+			}
+			set
+			{
+				if ((this._ngaysinh != value))
+				{
+					this._ngaysinh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_diachi", DbType="NChar(20) NOT NULL", CanBeNull=false)]
+		public string diachi
+		{
+			get
+			{
+				return this._diachi;
+			}
+			set
+			{
+				if ((this._diachi != value))
+				{
+					this._diachi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sodienthoai", DbType="NChar(10)")]
+		public string sodienthoai
+		{
+			get
+			{
+				return this._sodienthoai;
+			}
+			set
+			{
+				if ((this._sodienthoai != value))
+				{
+					this._sodienthoai = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maquanly", DbType="NChar(10)")]
+		public string maquanly
+		{
+			get
+			{
+				return this._maquanly;
+			}
+			set
+			{
+				if ((this._maquanly != value))
+				{
+					this._maquanly = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_machucvu", DbType="NChar(10)")]
+		public string machucvu
+		{
+			get
+			{
+				return this._machucvu;
+			}
+			set
+			{
+				if ((this._machucvu != value))
+				{
+					this._machucvu = value;
 				}
 			}
 		}
