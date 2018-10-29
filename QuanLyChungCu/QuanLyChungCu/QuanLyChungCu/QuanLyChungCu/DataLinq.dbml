@@ -10,8 +10,8 @@
       <Association Name="CanHo_SoHuuCanHo" Member="SoHuuCanHos" ThisKey="ma" OtherKey="macanho" Type="SoHuuCanHo" />
     </Type>
   </Table>
-  <Table Name="dbo.UserLogin" Member="UserLogins">
-    <Type Name="UserLogin">
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
       <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="tendangnhap" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="matkhau" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
@@ -50,7 +50,7 @@
       <Column Name="ngaysinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="dantoc" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="tongiao" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="nghenghiep" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="nghenghiep" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="sodienthoai" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="macanho" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Association Name="NguoiDan_SoHuuCanHo" Member="SoHuuCanHos" ThisKey="ma" OtherKey="machuho" Type="SoHuuCanHo" />
@@ -137,6 +137,18 @@
     </ElementType>
   </Function>
   <Function Name="dbo.capNhatNguoiDan" Method="capNhatNguoiDan">
+    <Parameter Name="ma" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="ten" Type="System.String" DbType="NChar(30)" />
+    <Parameter Name="gioitinh" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="ngaysinh" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="dantoc" Type="System.String" DbType="NChar(20)" />
+    <Parameter Name="tongiao" Type="System.String" DbType="NChar(20)" />
+    <Parameter Name="nghenghiep" Type="System.String" DbType="NChar(30)" />
+    <Parameter Name="sodienthoai" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="macanho" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.themNguoiDan" Method="themNguoiDan1">
     <Parameter Name="ma" Type="System.String" DbType="NChar(10)" />
     <Parameter Name="ten" Type="System.String" DbType="NChar(30)" />
     <Parameter Name="gioitinh" Type="System.String" DbType="NChar(10)" />

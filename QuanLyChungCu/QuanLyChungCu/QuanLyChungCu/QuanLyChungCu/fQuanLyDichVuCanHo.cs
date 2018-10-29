@@ -173,14 +173,12 @@ namespace QuanLyChungCu
                 string maCanHo = cboMaDichVu.Text.Trim();
                 string maDichVu = cboMaCanHo.Text.Trim();
                 context.capNhatCanHoDichVu(maCanHo, maDichVu);
-                LoadData();
             }
             if (isThem)
             {
                 string maCanHo = cboMaCanHo.Text.Trim();
                 string maDichVu = cboMaDichVu.Text.Trim();
                 context.themCanHoDichVu(maCanHo, maDichVu);
-                LoadData();
             }
         }
 

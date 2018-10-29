@@ -34,7 +34,7 @@ namespace QuanLyChungCu
             matKhau = txtMatKhau.Text.Trim();
             using (DataLinqDataContext context = new DataLinqDataContext(PropertieConst.connectionString))
             {
-                UserLogin us = context.UserLogins.Where(m => m.tendangnhap == taiKhoan && m.matkhau == matKhau).FirstOrDefault();
+                User us = context.Users.Where(m => m.tendangnhap == taiKhoan && m.matkhau == matKhau).FirstOrDefault();
                 if (us != null)
                 {
                     MessageBox.Show("Đăng nhập thành công thành công !", "Thông báo !", MessageBoxButtons.OK);

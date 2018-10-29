@@ -33,9 +33,9 @@ namespace QuanLyChungCu
     partial void InsertCanHo(CanHo instance);
     partial void UpdateCanHo(CanHo instance);
     partial void DeleteCanHo(CanHo instance);
-    partial void InsertUserLogin(UserLogin instance);
-    partial void UpdateUserLogin(UserLogin instance);
-    partial void DeleteUserLogin(UserLogin instance);
+    partial void InsertUser(User instance);
+    partial void UpdateUser(User instance);
+    partial void DeleteUser(User instance);
     partial void InsertCanHo_DichVu(CanHo_DichVu instance);
     partial void UpdateCanHo_DichVu(CanHo_DichVu instance);
     partial void DeleteCanHo_DichVu(CanHo_DichVu instance);
@@ -94,11 +94,11 @@ namespace QuanLyChungCu
 			}
 		}
 		
-		public System.Data.Linq.Table<UserLogin> UserLogins
+		public System.Data.Linq.Table<User> Users
 		{
 			get
 			{
-				return this.GetTable<UserLogin>();
+				return this.GetTable<User>();
 			}
 		}
 		
@@ -189,6 +189,13 @@ namespace QuanLyChungCu
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.capNhatNguoiDan")]
 		public int capNhatNguoiDan([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string gioitinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaysinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string dantoc, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string tongiao, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string nghenghiep, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string sodienthoai, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string macanho)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, ten, gioitinh, ngaysinh, dantoc, tongiao, nghenghiep, sodienthoai, macanho);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.themNguoiDan")]
+		public int themNguoiDan1([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string gioitinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaysinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string dantoc, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string tongiao, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string nghenghiep, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string sodienthoai, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string macanho)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, ten, gioitinh, ngaysinh, dantoc, tongiao, nghenghiep, sodienthoai, macanho);
 			return ((int)(result.ReturnValue));
@@ -484,8 +491,8 @@ namespace QuanLyChungCu
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UserLogin")]
-	public partial class UserLogin : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[User]")]
+	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -512,7 +519,7 @@ namespace QuanLyChungCu
     partial void OnquyenChanged();
     #endregion
 		
-		public UserLogin()
+		public User()
 		{
 			OnCreated();
 		}
@@ -1241,7 +1248,7 @@ namespace QuanLyChungCu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nghenghiep", DbType="NChar(30)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nghenghiep", DbType="NChar(10)")]
 		public string nghenghiep
 		{
 			get
