@@ -111,12 +111,12 @@
     <Compile Include="fQuanLyDichVuCanHo.Designer.cs">
       <DependentUpon>fQuanLyDichVuCanHo.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="fQuanLyDichVuCanHo.resx">
-      <DependentUpon>fQuanLyDichVuCanHo.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="DataLinq.dbml.layout">
       <DependentUpon>DataLinq.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="fQuanLyDichVuCanHo.resx">
+      <DependentUpon>fQuanLyDichVuCanHo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fDangNhap.resx">
       <DependentUpon>fDangNhap.cs</DependentUpon>
     </EmbeddedResource>
