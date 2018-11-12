@@ -259,5 +259,10 @@ namespace QuanLyChungCu
 
             txtChiPhi.Text = ((cboDVItem)cboMaDichVu.Items[indexChange]).ChiphiDV;
         }
+
+        private void fQuanLyDichVuCanHo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -288,10 +288,16 @@ namespace QuanLyChungCu
 			return this.CreateMethodCallQuery<layDanhSachQuanLyNguoiDanResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LayChucVu", IsComposable=true)]
-		public string LayChucVu()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LayDanhSachMaQuanLiNV", IsComposable=true)]
+		public IQueryable<LayDanhSachMaQuanLiNVResult> LayDanhSachMaQuanLiNV()
 		{
-			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
+			return this.CreateMethodCallQuery<LayDanhSachMaQuanLiNVResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LayDanhSachChucVu", IsComposable=true)]
+		public IQueryable<LayDanhSachChucVuResult> LayDanhSachChucVu()
+		{
+			return this.CreateMethodCallQuery<LayDanhSachChucVuResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 		}
 	}
 	
@@ -2767,6 +2773,94 @@ namespace QuanLyChungCu
 				if ((this._tang != value))
 				{
 					this._tang = value;
+				}
+			}
+		}
+	}
+	
+	public partial class LayDanhSachMaQuanLiNVResult
+	{
+		
+		private string _txt;
+		
+		public LayDanhSachMaQuanLiNVResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_txt", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string txt
+		{
+			get
+			{
+				return this._txt;
+			}
+			set
+			{
+				if ((this._txt != value))
+				{
+					this._txt = value;
+				}
+			}
+		}
+	}
+	
+	public partial class LayDanhSachChucVuResult
+	{
+		
+		private string _machucvu;
+		
+		private string _tenchucvu;
+		
+		private System.Nullable<decimal> _luong;
+		
+		public LayDanhSachChucVuResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_machucvu", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string machucvu
+		{
+			get
+			{
+				return this._machucvu;
+			}
+			set
+			{
+				if ((this._machucvu != value))
+				{
+					this._machucvu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenchucvu", DbType="NChar(30)")]
+		public string tenchucvu
+		{
+			get
+			{
+				return this._tenchucvu;
+			}
+			set
+			{
+				if ((this._tenchucvu != value))
+				{
+					this._tenchucvu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_luong", DbType="Money")]
+		public System.Nullable<decimal> luong
+		{
+			get
+			{
+				return this._luong;
+			}
+			set
+			{
+				if ((this._luong != value))
+				{
+					this._luong = value;
 				}
 			}
 		}

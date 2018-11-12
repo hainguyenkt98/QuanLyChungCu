@@ -168,6 +168,7 @@
             this.cboCanHo.Name = "cboCanHo";
             this.cboCanHo.Size = new System.Drawing.Size(139, 21);
             this.cboCanHo.TabIndex = 20;
+            this.cboCanHo.SelectedIndexChanged += new System.EventHandler(this.cboCanHo_SelectedIndexChanged);
             // 
             // labelControl11
             // 

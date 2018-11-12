@@ -274,5 +274,10 @@ namespace QuanLyChungCu
         {
 
         }
+
+        private void cboCanHo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
