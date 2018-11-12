@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQuanLyNhanVien));
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions9 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions10 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions11 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions12 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.pnInfo = new DevExpress.XtraEditors.PanelControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.pnControlFor = new DevExpress.XtraEditors.PanelControl();
@@ -119,6 +119,7 @@
             this.pnControlFor.Controls.Add(this.labelControl9);
             this.pnControlFor.Controls.Add(this.labelControl8);
             this.pnControlFor.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnControlFor.Enabled = false;
             this.pnControlFor.Location = new System.Drawing.Point(2, 311);
             this.pnControlFor.Name = "pnControlFor";
             this.pnControlFor.Size = new System.Drawing.Size(239, 148);
@@ -136,6 +137,7 @@
             this.btnHuy.Size = new System.Drawing.Size(75, 23);
             this.btnHuy.TabIndex = 26;
             this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnLuu
             // 
@@ -149,6 +151,7 @@
             this.btnLuu.Size = new System.Drawing.Size(75, 23);
             this.btnLuu.TabIndex = 25;
             this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // cboChucVu
             // 
@@ -205,6 +208,7 @@
             this.pnControlPri.Controls.Add(this.labelControl3);
             this.pnControlPri.Controls.Add(this.labelControl2);
             this.pnControlPri.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnControlPri.Enabled = false;
             this.pnControlPri.Location = new System.Drawing.Point(2, 43);
             this.pnControlPri.Name = "pnControlPri";
             this.pnControlPri.Size = new System.Drawing.Size(239, 416);
@@ -227,6 +231,10 @@
             // 
             this.cboGioiTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGioiTinh.FormattingEnabled = true;
+            this.cboGioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nu",
+            "Khac"});
             this.cboGioiTinh.Location = new System.Drawing.Point(95, 87);
             this.cboGioiTinh.Name = "cboGioiTinh";
             this.cboGioiTinh.Size = new System.Drawing.Size(100, 21);
@@ -234,7 +242,6 @@
             // 
             // textEdit4
             // 
-            this.textEdit4.Enabled = false;
             this.textEdit4.Location = new System.Drawing.Point(95, 195);
             this.textEdit4.Name = "textEdit4";
             this.textEdit4.Size = new System.Drawing.Size(139, 20);
@@ -242,7 +249,6 @@
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Enabled = false;
             this.txtDiaChi.Location = new System.Drawing.Point(95, 158);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(139, 20);
@@ -250,7 +256,6 @@
             // 
             // txtTen
             // 
-            this.txtTen.Enabled = false;
             this.txtTen.Location = new System.Drawing.Point(95, 53);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(139, 20);
@@ -378,15 +383,15 @@
             // windowsUIButtonPanel
             // 
             this.windowsUIButtonPanel.AllowGlyphSkinning = false;
-            windowsUIButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions1.Image")));
-            windowsUIButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions2.Image")));
-            windowsUIButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions3.Image")));
-            windowsUIButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions4.Image")));
+            windowsUIButtonImageOptions9.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions9.Image")));
+            windowsUIButtonImageOptions10.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions10.Image")));
+            windowsUIButtonImageOptions11.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions11.Image")));
+            windowsUIButtonImageOptions12.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions12.Image")));
             this.windowsUIButtonPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm", true, windowsUIButtonImageOptions1),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xóa", true, windowsUIButtonImageOptions2),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Sửa", true, windowsUIButtonImageOptions3),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("In", true, windowsUIButtonImageOptions4)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm", true, windowsUIButtonImageOptions9),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xóa", true, windowsUIButtonImageOptions10),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Sửa", true, windowsUIButtonImageOptions11),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("In", true, windowsUIButtonImageOptions12)});
             this.windowsUIButtonPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.windowsUIButtonPanel.ForeColor = System.Drawing.Color.Black;
             this.windowsUIButtonPanel.Location = new System.Drawing.Point(243, 406);
@@ -396,7 +401,6 @@
             this.windowsUIButtonPanel.Text = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel.UseButtonBackgroundImages = false;
             this.windowsUIButtonPanel.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel_ButtonClick);
-            this.windowsUIButtonPanel.Click += new System.EventHandler(this.windowsUIButtonPanel_Click);
             // 
             // gridControl
             // 

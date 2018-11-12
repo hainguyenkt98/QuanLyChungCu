@@ -287,6 +287,12 @@ namespace QuanLyChungCu
 		{
 			return this.CreateMethodCallQuery<layDanhSachQuanLyNguoiDanResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LayChucVu", IsComposable=true)]
+		public string LayChucVu()
+		{
+			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CanHo")]

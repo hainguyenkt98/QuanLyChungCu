@@ -16,11 +16,10 @@ namespace QuanLyChungCu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
             Application.Run(new fQuanLyNhanVien());
-=======
-            Application.Run(new fQuanLyDichVuCanHo());
->>>>>>> 0f7cfdd805726c7e42d8ad0312d6ea6fbc5d1ae0
+
+           
+
         }
     }
 }
