@@ -16,14 +16,7 @@ namespace QuanLyChungCu
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
-            Application.Run(new fQuanLyNhanVien());
-
-           
-=======
-            Application.Run(new fQuanLyCanHo());
->>>>>>> 0e8944d8a95cde0fcd0854820f0dd43c38c9516c
-
+            Application.Run(new fKetNoiDataBase());
         }
     }
 }
