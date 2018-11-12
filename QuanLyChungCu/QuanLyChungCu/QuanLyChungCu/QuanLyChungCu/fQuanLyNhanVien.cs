@@ -79,7 +79,10 @@ namespace QuanLyChungCu
             isThem = true;
             pnControlFor.Enabled = true;
             pnControlPri.Enabled = true;
-           
+            LoadQL();
+            LoadChucVu();
+
+
         }
         private void Xoa()
         {
@@ -112,7 +115,10 @@ namespace QuanLyChungCu
                 if (gridView1.IsRowSelected(i))
                 {
                     isSua = true;
-                  
+                    LoadQL();
+                    LoadChucVu();
+
+
 
                     rowSelecting = i;
                     txtMa.Text = gridView1.GetRowCellValue(i, "Mã").ToString();
@@ -242,6 +248,42 @@ namespace QuanLyChungCu
             cboNguoiQuanLi.Text = "";
            cboChucVu.Text = "";
         }
-       
+        private void LoadQL()
+        {
+            cboNguoiQuanLi.Items.Clear();
+            var DSQLNV = context.LayDanhSachMaQuanLiNV();
+            foreach (var QL in DSQLNV)
+            {
+                cboNguoiQuanLi.Items.Add(QL.txt.ToString().Trim());
+            }
+
+        }
+        private void LoadChucVu()
+        {
+            var danhSachCV = context.LayDanhSachChucVu();
+            foreach (var cv in danhSachCV)
+            {
+                cboCVitem item = new cboCVitem();
+                item.MaCV = cv.machucvu.ToString().Trim();
+                item.TenCV = cv.tenchucvu.ToString().Trim();
+                item.LuongCV = cv.luong.ToString().Trim();
+
+                cboChucVu.Items.Add(item);
+                
+            }
+
+        }
+
+        private void cboNguoiQuanLi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           int indexChange = cboNguoiQuanLi.SelectedIndex;
+         cboNguoiQuanLi.SelectedIndex = indexChange;
+        }
+
+        private void cboChucVu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           // int indexChange = cboChucVu.SelectedIndex;
+           // cboTenDichVu.SelectedIndex = indexChange;
+        }
     }
 }

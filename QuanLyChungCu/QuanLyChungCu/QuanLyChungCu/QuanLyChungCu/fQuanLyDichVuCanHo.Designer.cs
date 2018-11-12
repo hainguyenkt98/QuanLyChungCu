@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions13 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQuanLyDichVuCanHo));
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions14 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions15 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions16 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.windowsUIButtonPanel = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.pnInfo = new DevExpress.XtraEditors.PanelControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
@@ -44,6 +44,9 @@
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.pnControlPri = new DevExpress.XtraEditors.PanelControl();
+            this.txtChiPhi = new System.Windows.Forms.TextBox();
+            this.cboTenDichVu = new System.Windows.Forms.ComboBox();
+            this.cboMaDichVu = new System.Windows.Forms.ComboBox();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -53,9 +56,6 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.cboMaDichVu = new System.Windows.Forms.ComboBox();
-            this.cboTenDichVu = new System.Windows.Forms.ComboBox();
-            this.txtChiPhi = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pnInfo)).BeginInit();
             this.pnInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
@@ -74,15 +74,15 @@
             // windowsUIButtonPanel
             // 
             this.windowsUIButtonPanel.AllowGlyphSkinning = false;
-            windowsUIButtonImageOptions13.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions13.Image")));
-            windowsUIButtonImageOptions14.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions14.Image")));
-            windowsUIButtonImageOptions15.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions15.Image")));
-            windowsUIButtonImageOptions16.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions16.Image")));
+            windowsUIButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions1.Image")));
+            windowsUIButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions2.Image")));
+            windowsUIButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions3.Image")));
+            windowsUIButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions4.Image")));
             this.windowsUIButtonPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm", true, windowsUIButtonImageOptions13),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xóa", true, windowsUIButtonImageOptions14),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("In", true, windowsUIButtonImageOptions15),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Tải lại", true, windowsUIButtonImageOptions16)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm", true, windowsUIButtonImageOptions1),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xóa", true, windowsUIButtonImageOptions2),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("In", true, windowsUIButtonImageOptions3),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Tải lại", true, windowsUIButtonImageOptions4)});
             this.windowsUIButtonPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.windowsUIButtonPanel.ForeColor = System.Drawing.Color.Black;
             this.windowsUIButtonPanel.Location = new System.Drawing.Point(243, 406);
@@ -219,6 +219,34 @@
             this.pnControlPri.Size = new System.Drawing.Size(239, 416);
             this.pnControlPri.TabIndex = 4;
             // 
+            // txtChiPhi
+            // 
+            this.txtChiPhi.Location = new System.Drawing.Point(95, 130);
+            this.txtChiPhi.Name = "txtChiPhi";
+            this.txtChiPhi.ReadOnly = true;
+            this.txtChiPhi.Size = new System.Drawing.Size(129, 21);
+            this.txtChiPhi.TabIndex = 21;
+            // 
+            // cboTenDichVu
+            // 
+            this.cboTenDichVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTenDichVu.FormattingEnabled = true;
+            this.cboTenDichVu.Location = new System.Drawing.Point(95, 75);
+            this.cboTenDichVu.Name = "cboTenDichVu";
+            this.cboTenDichVu.Size = new System.Drawing.Size(129, 21);
+            this.cboTenDichVu.TabIndex = 19;
+            this.cboTenDichVu.SelectedIndexChanged += new System.EventHandler(this.cboTenDichVu_SelectedIndexChanged);
+            // 
+            // cboMaDichVu
+            // 
+            this.cboMaDichVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMaDichVu.FormattingEnabled = true;
+            this.cboMaDichVu.Location = new System.Drawing.Point(95, 23);
+            this.cboMaDichVu.Name = "cboMaDichVu";
+            this.cboMaDichVu.Size = new System.Drawing.Size(129, 21);
+            this.cboMaDichVu.TabIndex = 18;
+            this.cboMaDichVu.SelectedIndexChanged += new System.EventHandler(this.cboMaDichVu_SelectedIndexChanged);
+            // 
             // labelControl4
             // 
             this.labelControl4.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
@@ -320,34 +348,6 @@
             this.gridView1.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // cboMaDichVu
-            // 
-            this.cboMaDichVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboMaDichVu.FormattingEnabled = true;
-            this.cboMaDichVu.Location = new System.Drawing.Point(95, 23);
-            this.cboMaDichVu.Name = "cboMaDichVu";
-            this.cboMaDichVu.Size = new System.Drawing.Size(129, 21);
-            this.cboMaDichVu.TabIndex = 18;
-            this.cboMaDichVu.SelectedIndexChanged += new System.EventHandler(this.cboMaDichVu_SelectedIndexChanged);
-            // 
-            // cboTenDichVu
-            // 
-            this.cboTenDichVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTenDichVu.FormattingEnabled = true;
-            this.cboTenDichVu.Location = new System.Drawing.Point(95, 75);
-            this.cboTenDichVu.Name = "cboTenDichVu";
-            this.cboTenDichVu.Size = new System.Drawing.Size(129, 21);
-            this.cboTenDichVu.TabIndex = 19;
-            this.cboTenDichVu.SelectedIndexChanged += new System.EventHandler(this.cboTenDichVu_SelectedIndexChanged);
-            // 
-            // txtChiPhi
-            // 
-            this.txtChiPhi.Location = new System.Drawing.Point(95, 130);
-            this.txtChiPhi.Name = "txtChiPhi";
-            this.txtChiPhi.ReadOnly = true;
-            this.txtChiPhi.Size = new System.Drawing.Size(129, 21);
-            this.txtChiPhi.TabIndex = 21;
-            // 
             // fQuanLyDichVuCanHo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -358,6 +358,7 @@
             this.Controls.Add(this.pnInfo);
             this.Name = "fQuanLyDichVuCanHo";
             this.Text = "QuanLyDichVuCanHo";
+            this.Load += new System.EventHandler(this.fQuanLyDichVuCanHo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pnInfo)).EndInit();
             this.pnInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();

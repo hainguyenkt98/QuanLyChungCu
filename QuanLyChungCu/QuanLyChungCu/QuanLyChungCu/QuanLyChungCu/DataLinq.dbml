@@ -248,7 +248,16 @@
       <Column Name="tang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="dbo.LayChucVu" Method="LayChucVu" IsComposable="true">
-    <Return Type="System.String" />
+  <Function Name="dbo.LayDanhSachMaQuanLiNV" Method="LayDanhSachMaQuanLiNV" IsComposable="true">
+    <ElementType Name="LayDanhSachMaQuanLiNVResult">
+      <Column Name="txt" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LayDanhSachChucVu" Method="LayDanhSachChucVu" IsComposable="true">
+    <ElementType Name="LayDanhSachChucVuResult">
+      <Column Name="machucvu" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="tenchucvu" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="luong" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>
