@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQuanLyNhanVien));
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions7 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions8 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.pnInfo = new DevExpress.XtraEditors.PanelControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.pnControlFor = new DevExpress.XtraEditors.PanelControl();
@@ -45,11 +45,11 @@
             this.pnControlPri = new DevExpress.XtraEditors.PanelControl();
             this.dtNgaySinh = new DevExpress.XtraEditors.DateEdit();
             this.cboGioiTinh = new System.Windows.Forms.ComboBox();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.txtSodt = new DevExpress.XtraEditors.TextEdit();
             this.txtDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.txtTen = new DevExpress.XtraEditors.TextEdit();
             this.txtMa = new DevExpress.XtraEditors.TextEdit();
-            this.txtSDT = new DevExpress.XtraEditors.LabelControl();
+            this.labelDT = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -71,7 +71,7 @@
             this.pnControlPri.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtNgaySinh.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNgaySinh.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSodt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMa.Properties)).BeginInit();
@@ -199,11 +199,11 @@
             this.pnControlPri.Appearance.Options.UseBackColor = true;
             this.pnControlPri.Controls.Add(this.dtNgaySinh);
             this.pnControlPri.Controls.Add(this.cboGioiTinh);
-            this.pnControlPri.Controls.Add(this.textEdit4);
+            this.pnControlPri.Controls.Add(this.txtSodt);
             this.pnControlPri.Controls.Add(this.txtDiaChi);
             this.pnControlPri.Controls.Add(this.txtTen);
             this.pnControlPri.Controls.Add(this.txtMa);
-            this.pnControlPri.Controls.Add(this.txtSDT);
+            this.pnControlPri.Controls.Add(this.labelDT);
             this.pnControlPri.Controls.Add(this.labelControl6);
             this.pnControlPri.Controls.Add(this.labelControl5);
             this.pnControlPri.Controls.Add(this.labelControl4);
@@ -242,12 +242,12 @@
             this.cboGioiTinh.Size = new System.Drawing.Size(100, 21);
             this.cboGioiTinh.TabIndex = 21;
             // 
-            // textEdit4
+            // txtSodt
             // 
-            this.textEdit4.Location = new System.Drawing.Point(95, 195);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(139, 20);
-            this.textEdit4.TabIndex = 20;
+            this.txtSodt.Location = new System.Drawing.Point(95, 195);
+            this.txtSodt.Name = "txtSodt";
+            this.txtSodt.Size = new System.Drawing.Size(139, 20);
+            this.txtSodt.TabIndex = 20;
             // 
             // txtDiaChi
             // 
@@ -271,15 +271,15 @@
             this.txtMa.Size = new System.Drawing.Size(139, 20);
             this.txtMa.TabIndex = 15;
             // 
-            // txtSDT
+            // labelDT
             // 
-            this.txtSDT.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtSDT.Appearance.Options.UseForeColor = true;
-            this.txtSDT.Location = new System.Drawing.Point(20, 202);
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(62, 13);
-            this.txtSDT.TabIndex = 14;
-            this.txtSDT.Text = "Số điện thoại";
+            this.labelDT.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.labelDT.Appearance.Options.UseForeColor = true;
+            this.labelDT.Location = new System.Drawing.Point(20, 202);
+            this.labelDT.Name = "labelDT";
+            this.labelDT.Size = new System.Drawing.Size(62, 13);
+            this.labelDT.TabIndex = 14;
+            this.labelDT.Text = "Số điện thoại";
             // 
             // labelControl6
             // 
@@ -385,15 +385,15 @@
             // windowsUIButtonPanel
             // 
             this.windowsUIButtonPanel.AllowGlyphSkinning = false;
-            windowsUIButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions5.Image")));
-            windowsUIButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions6.Image")));
-            windowsUIButtonImageOptions7.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions7.Image")));
-            windowsUIButtonImageOptions8.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions8.Image")));
+            windowsUIButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions1.Image")));
+            windowsUIButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions2.Image")));
+            windowsUIButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions3.Image")));
+            windowsUIButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions4.Image")));
             this.windowsUIButtonPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm", true, windowsUIButtonImageOptions5),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xóa", true, windowsUIButtonImageOptions6),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Sửa", true, windowsUIButtonImageOptions7),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("In", true, windowsUIButtonImageOptions8)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm", true, windowsUIButtonImageOptions1),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xóa", true, windowsUIButtonImageOptions2),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Sửa", true, windowsUIButtonImageOptions3),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("In", true, windowsUIButtonImageOptions4)});
             this.windowsUIButtonPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.windowsUIButtonPanel.ForeColor = System.Drawing.Color.Black;
             this.windowsUIButtonPanel.Location = new System.Drawing.Point(243, 406);
@@ -446,7 +446,7 @@
             this.pnControlPri.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtNgaySinh.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNgaySinh.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSodt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMa.Properties)).EndInit();
@@ -477,14 +477,14 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LabelControl txtSDT;
+        private DevExpress.XtraEditors.LabelControl labelDT;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.TextEdit txtMa;
         private DevExpress.XtraEditors.TextEdit txtTen;
         private DevExpress.XtraEditors.TextEdit txtDiaChi;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.TextEdit txtSodt;
         private System.Windows.Forms.ComboBox cboGioiTinh;
         private DevExpress.XtraEditors.DateEdit dtNgaySinh;
         private System.Windows.Forms.ComboBox cboChucVu;

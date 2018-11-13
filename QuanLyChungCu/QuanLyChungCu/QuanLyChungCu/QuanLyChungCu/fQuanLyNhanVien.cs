@@ -126,7 +126,7 @@ namespace QuanLyChungCu
                     cboGioiTinh.Text = gridView1.GetRowCellValue(i, "Giới tính").ToString();
                     dtNgaySinh.Text = gridView1.GetRowCellValue(i, "Ngày sinh").ToString();
                    txtDiaChi.Text = gridView1.GetRowCellValue(i, "Địa chỉ").ToString();
-                    txtSDT.Text = gridView1.GetRowCellValue(i, "Số điện thoại").ToString();
+                    txtSodt.Text = gridView1.GetRowCellValue(i, "Số điện thoại").ToString();
 
                    cboNguoiQuanLi.Text = gridView1.GetRowCellValue(i, "Mã quản lí").ToString();
                     cboChucVu.Text = gridView1.GetRowCellValue(i, "Mã chức vụ").ToString();
@@ -210,12 +210,12 @@ namespace QuanLyChungCu
                 //DateTime dt = Convert.ToDateTime(dtNgaySinh.)
                 if (isSua)
                 {
-                    context.capnhapNhanVien(txtMa.Text.Trim(), txtTen.Text.Trim(), cboGioiTinh.Text.Trim(), dtNgaySinh.DateTime, txtDiaChi.Text.Trim(), txtSDT.Text.Trim(), cboNguoiQuanLi.Text.Trim(), cboChucVu.Text.Trim());
+                    context.capnhapNhanVien(txtMa.Text.Trim(), txtTen.Text.Trim(), cboGioiTinh.Text.Trim(), dtNgaySinh.DateTime, txtDiaChi.Text.Trim(), txtSodt.Text.Trim(), cboNguoiQuanLi.Text.Trim(), cboChucVu.Text.Trim());
                     isSua = false;
                 }
                 if (isThem)
                 {
-                    context.themNhanVien(txtMa.Text.Trim(), txtTen.Text.Trim(), cboGioiTinh.Text.Trim(), dtNgaySinh.DateTime, txtDiaChi.Text.Trim(), txtSDT.Text.Trim(), cboNguoiQuanLi.Text.Trim(), cboChucVu.Text.Trim());
+                    context.themNhanVien(txtMa.Text.Trim(), txtTen.Text.Trim(), cboGioiTinh.Text.Trim(), dtNgaySinh.DateTime, txtDiaChi.Text.Trim(), txtSodt.Text.Trim(), cboNguoiQuanLi.Text.Trim(), cboChucVu.Text.Trim());
                     isThem = false;
                     txtMa.Enabled = false;
                 }
@@ -244,7 +244,7 @@ namespace QuanLyChungCu
            cboGioiTinh.Text = "";
             dtNgaySinh.Text = "";
             txtDiaChi.Text = "";
-            txtSDT.Text = "";
+            txtSodt.Text = "";
             cboNguoiQuanLi.Text = "";
            cboChucVu.Text = "";
         }
@@ -260,15 +260,12 @@ namespace QuanLyChungCu
         }
         private void LoadChucVu()
         {
+            cboChucVu.Items.Clear();
             var danhSachCV = context.LayDanhSachChucVu();
             foreach (var cv in danhSachCV)
             {
-                cboCVitem item = new cboCVitem();
-                item.MaCV = cv.machucvu.ToString().Trim();
-                item.TenCV = cv.tenchucvu.ToString().Trim();
-                item.LuongCV = cv.luong.ToString().Trim();
+                cboChucVu.Items.Add(cv.machucvu.ToString().Trim());
 
-                cboChucVu.Items.Add(item);
                 
             }
 
@@ -276,14 +273,12 @@ namespace QuanLyChungCu
 
         private void cboNguoiQuanLi_SelectedIndexChanged(object sender, EventArgs e)
         {
-           int indexChange = cboNguoiQuanLi.SelectedIndex;
-         cboNguoiQuanLi.SelectedIndex = indexChange;
+           
         }
 
         private void cboChucVu_SelectedIndexChanged(object sender, EventArgs e)
         {
-           // int indexChange = cboChucVu.SelectedIndex;
-           // cboTenDichVu.SelectedIndex = indexChange;
+           
         }
     }
 }

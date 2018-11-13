@@ -256,5 +256,10 @@ namespace QuanLyChungCu
         {
 
         }
+
+        private void fQuanLyCanHo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

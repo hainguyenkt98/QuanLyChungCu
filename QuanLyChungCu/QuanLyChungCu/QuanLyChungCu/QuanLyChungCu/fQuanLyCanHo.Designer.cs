@@ -369,6 +369,7 @@
             this.Controls.Add(this.pnInfo);
             this.Name = "fQuanLyCanHo";
             this.Text = "Quản lý căn hộ";
+            this.Load += new System.EventHandler(this.fQuanLyCanHo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
