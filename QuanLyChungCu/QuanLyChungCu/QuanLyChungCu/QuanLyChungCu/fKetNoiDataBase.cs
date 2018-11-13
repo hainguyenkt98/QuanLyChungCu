@@ -63,22 +63,121 @@ namespace QuanLyChungCu
             string submetMarsk = Dns.GetHostByName(hostName).AddressList[0].ToString();
             int coutDot = 0;
 
-
-            string firstOctet = myIP.Substring(0, 3);
-
-            
-
-
-            if(classIP(firstOctet) == "A")
+            string firstOctet = "";
+            for (int i = 0; i < myIP.Length; i++)
             {
+                if (myIP[i].Equals('.'))
+                {
+                    coutDot++;
+                }
+                if (coutDot == 1)
+                {
+                    firstOctet = myIP.Substring(0, i + 1);
+                    break;
+                }
+            }
+
+            firstOctet = firstOctet.Substring(0, firstOctet.Length - 1);
+
+
+
+            if (classIP(firstOctet) == "A")
+            {
+                coutDot = 0;
+                for (int i = 0; i < myIP.Length; i++)
+                {
+                    if (myIP[i].Equals('.'))
+                    {
+                        coutDot++;
+                    }
+                    if (coutDot == 1)
+                    {
+                        baseIP = myIP.Substring(0, i + 1);
+                        break;
+                    }
+                }
+
+
+                for (int e = 0; e <= 255; e++)
+                {
+                    string secondOctet = e.ToString();
+
+                    for (int i = 0; i <= 255; i++)
+                    {
+                        string thirdOctet = i.ToString();
+                        pingIP = "";
+
+
+                        for (int j = 1; j < 255; j++)
+                        {
+                            pingIP = baseIP + secondOctet + "." + thirdOctet + "." + j.ToString();
+                            Ping ping = new Ping();
+                            PingReply pingresult = await ping.SendPingAsync(pingIP, 100);
+                            if (pingresult.Status.ToString() == "Success")
+                            {
+                                if (cboIP.InvokeRequired)
+                                {
+                                    cboIP.Invoke((MethodInvoker)delegate ()
+                                    {
+                                        cboIP.Items.Add(pingIP);
+                                    });
+                                }
+                                else
+                                {
+                                    cboIP.Items.Add(pingIP);
+                                }
+                            }
+                        }
+                    }
+                }
 
             }
-            if(classIP(firstOctet) == "B")
+            if (classIP(firstOctet) == "B")
             {
+                coutDot = 0;
+                for (int i = 0; i < myIP.Length; i++)
+                {
+                    if (myIP[i].Equals('.'))
+                    {
+                        coutDot++;
+                    }
+                    if (coutDot == 2)
+                    {
+                        baseIP = myIP.Substring(0, i + 1);
+                        break;
+                    }
+                }
+                for (int i = 0; i <= 255; i++)
+                {
+                    string thirdOctet = i.ToString();
+                    pingIP = "";
 
+
+                    for (int j = 1; j < 255; j++)
+                    {
+                        pingIP = baseIP + thirdOctet + "." + j.ToString();
+                        Ping ping = new Ping();
+                        PingReply pingresult = await ping.SendPingAsync(pingIP, 100);
+                        if (pingresult.Status.ToString() == "Success")
+                        {
+                            if (cboIP.InvokeRequired)
+                            {
+                                cboIP.Invoke((MethodInvoker)delegate ()
+                                {
+                                    cboIP.Items.Add(pingIP);
+                                });
+                            }
+                            else
+                            {
+                                cboIP.Items.Add(pingIP);
+                            }
+                        }
+                    }
+                }
             }
-            if(classIP(firstOctet) == "C")
+            if (classIP(firstOctet) == "C")
             {
+                coutDot = 0;
                 for (int i = 0; i < myIP.Length; i++)
                 {
                     if (myIP[i].Equals('.'))
@@ -91,7 +190,7 @@ namespace QuanLyChungCu
                         break;
                     }
                 }
-                for (int i = 1; i <= 254; i++)
+                for (int i = 1; i < 255; i++)
                 {
                     pingIP = "";
                     pingIP = pingIP + baseIP + i;
@@ -117,7 +216,7 @@ namespace QuanLyChungCu
 
 
 
-            
+
         }
         private string classIP(string firstOctet)
         {
