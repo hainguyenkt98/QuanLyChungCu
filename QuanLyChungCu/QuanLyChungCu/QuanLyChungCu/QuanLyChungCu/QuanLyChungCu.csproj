@@ -85,6 +85,12 @@
     <Compile Include="fQuanLyCanHo.Designer.cs">
       <DependentUpon>fQuanLyCanHo.cs</DependentUpon>
     </Compile>
+    <Compile Include="fHoaDonChiPhiDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fHoaDonChiPhiDichVu.Designer.cs">
+      <DependentUpon>fHoaDonChiPhiDichVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="fQuanLyNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     <None Include="DataLinq.dbml.layout">
       <DependentUpon>DataLinq.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="fHoaDonChiPhiDichVu.resx">
+      <DependentUpon>fHoaDonChiPhiDichVu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fQuanLyDichVuCanHo.resx">
       <DependentUpon>fQuanLyDichVuCanHo.cs</DependentUpon>
     </EmbeddedResource>

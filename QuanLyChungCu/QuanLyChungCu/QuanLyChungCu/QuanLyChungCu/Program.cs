@@ -17,7 +17,7 @@ namespace QuanLyChungCu
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new fKetNoiDataBase());
+            Application.Run(new fQuanLyChucNang());
         }
     }
 }
