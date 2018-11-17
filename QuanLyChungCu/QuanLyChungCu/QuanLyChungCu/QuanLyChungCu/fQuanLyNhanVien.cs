@@ -180,6 +180,15 @@ namespace QuanLyChungCu
                         Sua();
                         break;
                     }
+                case "Tải Lại":
+                    {
+                        if (isThem || isSua)
+                        {
+                            return;
+                        }
+                        LoadData();
+                        break;
+                    }
 
             }
         }
@@ -207,7 +216,7 @@ namespace QuanLyChungCu
         {
             try
             {
-                //DateTime dt = Convert.ToDateTime(dtNgaySinh.)
+               
                 if (isSua)
                 {
                     context.capnhapNhanVien(txtMa.Text.Trim(), txtTen.Text.Trim(), cboGioiTinh.Text.Trim(), dtNgaySinh.DateTime, txtDiaChi.Text.Trim(), txtSodt.Text.Trim(), cboNguoiQuanLi.Text.Trim(), cboChucVu.Text.Trim());
@@ -247,6 +256,7 @@ namespace QuanLyChungCu
             txtSodt.Text = "";
             cboNguoiQuanLi.Text = "";
            cboChucVu.Text = "";
+            cboTenChucVu.Text = "";
         }
         private void LoadQL()
         {
@@ -264,7 +274,14 @@ namespace QuanLyChungCu
             var danhSachCV = context.LayDanhSachChucVu();
             foreach (var cv in danhSachCV)
             {
-                cboChucVu.Items.Add(cv.machucvu.ToString().Trim());
+               cboCVitem item = new cboCVitem();
+                item.MaCV = cv.machucvu.ToString().Trim();
+                item.TenCV = cv.tenchucvu.ToString().Trim();
+                item.TenCV = cv.machucvu.ToString().Trim();
+
+                cboChucVu.Items.Add(item);
+                cboTenChucVu.Items.Add(cv.tenchucvu.ToString().Trim());
+               
 
                 
             }
@@ -278,7 +295,19 @@ namespace QuanLyChungCu
 
         private void cboChucVu_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            int indexChange = cboChucVu.SelectedIndex;
+            cboTenChucVu.SelectedIndex = indexChange;
+        }
+
+        private void cboMaChucVu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int indexChange = cboTenChucVu.SelectedIndex;
+            cboChucVu.SelectedIndex = indexChange;
+        }
+
+        private void windowsUIButtonPanel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

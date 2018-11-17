@@ -279,5 +279,10 @@ namespace QuanLyChungCu
         {
 
         }
+
+        private void windowsUIButtonPanel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

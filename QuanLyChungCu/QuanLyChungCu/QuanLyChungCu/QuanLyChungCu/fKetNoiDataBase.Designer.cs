@@ -36,14 +36,13 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtMatKhauDB = new DevExpress.XtraEditors.TextEdit();
-            this.txtIP = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txtTaiKhoanDB = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.txtTenDB = new DevExpress.XtraEditors.TextEdit();
+            this.cboIP = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMatKhauDB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTaiKhoanDB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenDB.Properties)).BeginInit();
             this.SuspendLayout();
@@ -129,15 +128,6 @@
             this.txtMatKhauDB.Size = new System.Drawing.Size(197, 26);
             this.txtMatKhauDB.TabIndex = 4;
             // 
-            // txtIP
-            // 
-            this.txtIP.Location = new System.Drawing.Point(243, 128);
-            this.txtIP.Name = "txtIP";
-            this.txtIP.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIP.Properties.Appearance.Options.UseFont = true;
-            this.txtIP.Size = new System.Drawing.Size(197, 26);
-            this.txtIP.TabIndex = 1;
-            // 
             // labelControl4
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -177,11 +167,21 @@
             this.txtTenDB.Size = new System.Drawing.Size(197, 26);
             this.txtTenDB.TabIndex = 2;
             // 
+            // cboIP
+            // 
+            this.cboIP.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboIP.FormattingEnabled = true;
+            this.cboIP.Location = new System.Drawing.Point(243, 123);
+            this.cboIP.Name = "cboIP";
+            this.cboIP.Size = new System.Drawing.Size(197, 27);
+            this.cboIP.TabIndex = 20;
+            // 
             // fKetNoiDataBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 377);
+            this.Controls.Add(this.cboIP);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.txtTenDB);
             this.Controls.Add(this.txtTaiKhoanDB);
@@ -193,12 +193,10 @@
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.txtMatKhauDB);
-            this.Controls.Add(this.txtIP);
             this.Name = "fKetNoiDataBase";
             this.Text = "fKetNoiDataBase";
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMatKhauDB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtIP.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTaiKhoanDB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenDB.Properties)).EndInit();
             this.ResumeLayout(false);
@@ -215,10 +213,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txtMatKhauDB;
-        private DevExpress.XtraEditors.TextEdit txtIP;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit txtTaiKhoanDB;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.TextEdit txtTenDB;
+        private System.Windows.Forms.ComboBox cboIP;
     }
 }

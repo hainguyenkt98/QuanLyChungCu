@@ -33,6 +33,7 @@
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.pnInfo = new DevExpress.XtraEditors.PanelControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.pnControlFor = new DevExpress.XtraEditors.PanelControl();
@@ -62,6 +63,7 @@
             this.windowsUIButtonPanel = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.cboTenChucVu = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pnInfo)).BeginInit();
             this.pnInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
@@ -112,6 +114,7 @@
             // 
             this.pnControlFor.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.pnControlFor.Appearance.Options.UseBackColor = true;
+            this.pnControlFor.Controls.Add(this.cboTenChucVu);
             this.pnControlFor.Controls.Add(this.btnHuy);
             this.pnControlFor.Controls.Add(this.btnLuu);
             this.pnControlFor.Controls.Add(this.cboChucVu);
@@ -159,7 +162,7 @@
             this.cboChucVu.FormattingEnabled = true;
             this.cboChucVu.Location = new System.Drawing.Point(95, 62);
             this.cboChucVu.Name = "cboChucVu";
-            this.cboChucVu.Size = new System.Drawing.Size(139, 21);
+            this.cboChucVu.Size = new System.Drawing.Size(54, 21);
             this.cboChucVu.TabIndex = 24;
             this.cboChucVu.SelectedIndexChanged += new System.EventHandler(this.cboChucVu_SelectedIndexChanged);
             // 
@@ -169,7 +172,7 @@
             this.cboNguoiQuanLi.FormattingEnabled = true;
             this.cboNguoiQuanLi.Location = new System.Drawing.Point(95, 24);
             this.cboNguoiQuanLi.Name = "cboNguoiQuanLi";
-            this.cboNguoiQuanLi.Size = new System.Drawing.Size(139, 21);
+            this.cboNguoiQuanLi.Size = new System.Drawing.Size(140, 21);
             this.cboNguoiQuanLi.TabIndex = 23;
             this.cboNguoiQuanLi.SelectedIndexChanged += new System.EventHandler(this.cboNguoiQuanLi_SelectedIndexChanged);
             // 
@@ -389,11 +392,14 @@
             windowsUIButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions2.Image")));
             windowsUIButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions3.Image")));
             windowsUIButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions4.Image")));
+            windowsUIButtonImageOptions5.ImageUri.Uri = "Recurrence";
+            windowsUIButtonImageOptions5.Location = DevExpress.XtraBars.Docking2010.ImageLocation.AboveText;
             this.windowsUIButtonPanel.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm", true, windowsUIButtonImageOptions1),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xóa", true, windowsUIButtonImageOptions2),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Sửa", true, windowsUIButtonImageOptions3),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("In", true, windowsUIButtonImageOptions4)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("In", true, windowsUIButtonImageOptions4),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Tải Lại", true, windowsUIButtonImageOptions5)});
             this.windowsUIButtonPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.windowsUIButtonPanel.ForeColor = System.Drawing.Color.Black;
             this.windowsUIButtonPanel.Location = new System.Drawing.Point(243, 406);
@@ -403,6 +409,7 @@
             this.windowsUIButtonPanel.Text = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel.UseButtonBackgroundImages = false;
             this.windowsUIButtonPanel.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel_ButtonClick);
+            this.windowsUIButtonPanel.Click += new System.EventHandler(this.windowsUIButtonPanel_Click);
             // 
             // gridControl
             // 
@@ -423,6 +430,16 @@
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // cboTenChucVu
+            // 
+            this.cboTenChucVu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTenChucVu.FormattingEnabled = true;
+            this.cboTenChucVu.Location = new System.Drawing.Point(155, 62);
+            this.cboTenChucVu.Name = "cboTenChucVu";
+            this.cboTenChucVu.Size = new System.Drawing.Size(79, 21);
+            this.cboTenChucVu.TabIndex = 27;
+            this.cboTenChucVu.SelectedIndexChanged += new System.EventHandler(this.cboMaChucVu_SelectedIndexChanged);
             // 
             // fQuanLyNhanVien
             // 
@@ -491,5 +508,6 @@
         private System.Windows.Forms.ComboBox cboNguoiQuanLi;
         private DevExpress.XtraEditors.SimpleButton btnLuu;
         private DevExpress.XtraEditors.SimpleButton btnHuy;
+        private System.Windows.Forms.ComboBox cboTenChucVu;
     }
 }
