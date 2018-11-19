@@ -14,7 +14,6 @@ namespace QuanLyChungCu
     public partial class fQuanLyChucNang : XtraForm
     {
         private fKetNoiDataBase ketNoiDB;
-        private fDangNhap dangNhap;
         public fQuanLyChucNang()
         {
             InitializeComponent();
@@ -77,45 +76,29 @@ namespace QuanLyChungCu
             }
         }
 
-        private void kếtNốiDataBaseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ketNoiDB = new fKetNoiDataBase();
-            ketNoiDB.StartPosition = FormStartPosition.CenterParent;
-            ketNoiDB.eventConnection += FKetNoiDB_eventConnection;
-            ketNoiDB.ShowDialog();
-        }
-        private void FKetNoiDB_eventConnection()
-        {
-            MessageBox.Show("Kết nối Database thành công, có thể đăng nhập !", "Thông báo !", MessageBoxButtons.OK);
-            PropertieConst.trangThaiKetNoiDB = true;
-            this.ketNoiDB.Close();
-            đăngNhậpToolStripMenuItem.Enabled = true;
-
-        }
 
         private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dangNhap = new fDangNhap();
-            dangNhap.StartPosition = FormStartPosition.CenterParent;
-            dangNhap.eventDangNhap += DangNhap_eventDangNhap;
-            dangNhap.ShowDialog();
+            ketNoiDB = new fKetNoiDataBase();
+            ketNoiDB.eventConnection += KetNoiDB_eventConnection;
+            ketNoiDB.StartPosition = FormStartPosition.CenterParent;
+            ketNoiDB.ShowDialog();
         }
 
-        private void DangNhap_eventDangNhap()
+        private void KetNoiDB_eventConnection()
         {
-            this.dangNhap.Close();
-            đăngNhậpToolStripMenuItem.Enabled = false;
-            đăngXuấtToolStripMenuItem.Enabled = true;
+            MessageBox.Show("Kết nối Database thành công, có thể đăng nhập !", "Thông báo !", MessageBoxButtons.OK);
+            PropertieConst.trangThaiKetNoiDB = true;
             pnNavBar.Enabled = true;
-            if(PropertieConst.quyen=="user")
-            {
-                btnUser.Enabled = false;
-                btnUser.Visible = false;
-            }
+            this.ketNoiDB.Close();
+            đăngNhậpToolStripMenuItem.Enabled = false;
+            đăngXuấtToolStripMenuItem.Enabled = false;
         }
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            đăngXuấtToolStripMenuItem.Enabled = false;
+            đăngNhậpToolStripMenuItem.Enabled = true;
             PropertieConst.tenTaiKhoan = "";
             PropertieConst.matKhau = "";
             PropertieConst.quyen = "";
@@ -133,6 +116,36 @@ namespace QuanLyChungCu
             else
             {
                 ActiveChildForm("fQuanLyCanHo");
+            }
+        }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            if (!CheckExistForm("fTraCuuPhiSinhHoat"))
+            {
+                fTraCuuPhiSinhHoat xf2 = new fTraCuuPhiSinhHoat();
+                xf2.MdiParent = this;
+                xf2.Name = "fTraCuuPhiSinhHoat";
+                xf2.Show();
+            }
+            else
+            {
+                ActiveChildForm("fTraCuuPhiSinhHoat");
+            }
+        }
+
+        private void btnCanHo_DichVu_Click(object sender, EventArgs e)
+        {
+            if (!CheckExistForm("fQuanLyDichVuCanHo"))
+            {
+                fQuanLyDichVuCanHo xf2 = new fQuanLyDichVuCanHo();
+                xf2.MdiParent = this;
+                xf2.Name = "fQuanLyDichVuCanHo";
+                xf2.Show();
+            }
+            else
+            {
+                ActiveChildForm("fQuanLyDichVuCanHo");
             }
         }
     }

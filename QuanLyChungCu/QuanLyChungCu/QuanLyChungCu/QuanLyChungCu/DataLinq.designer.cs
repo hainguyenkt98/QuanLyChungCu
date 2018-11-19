@@ -299,6 +299,12 @@ namespace QuanLyChungCu
 		{
 			return this.CreateMethodCallQuery<LayDanhSachChucVuResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.tracuuChiPhiDichVuCanHo", IsComposable=true)]
+		public IQueryable<tracuuChiPhiDichVuCanHoResult> tracuuChiPhiDichVuCanHo()
+		{
+			return this.CreateMethodCallQuery<tracuuChiPhiDichVuCanHoResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CanHo")]
@@ -2861,6 +2867,104 @@ namespace QuanLyChungCu
 				if ((this._luong != value))
 				{
 					this._luong = value;
+				}
+			}
+		}
+	}
+	
+	public partial class tracuuChiPhiDichVuCanHoResult
+	{
+		
+		private string _ma;
+		
+		private int _tang;
+		
+		private string _ten;
+		
+		private string _sodienthoai;
+		
+		private System.Nullable<decimal> _tongchiphi;
+		
+		public tracuuChiPhiDichVuCanHoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ma", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string ma
+		{
+			get
+			{
+				return this._ma;
+			}
+			set
+			{
+				if ((this._ma != value))
+				{
+					this._ma = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tang", DbType="Int NOT NULL")]
+		public int tang
+		{
+			get
+			{
+				return this._tang;
+			}
+			set
+			{
+				if ((this._tang != value))
+				{
+					this._tang = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ten", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		public string ten
+		{
+			get
+			{
+				return this._ten;
+			}
+			set
+			{
+				if ((this._ten != value))
+				{
+					this._ten = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sodienthoai", DbType="NChar(10)")]
+		public string sodienthoai
+		{
+			get
+			{
+				return this._sodienthoai;
+			}
+			set
+			{
+				if ((this._sodienthoai != value))
+				{
+					this._sodienthoai = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tongchiphi", DbType="Money")]
+		public System.Nullable<decimal> tongchiphi
+		{
+			get
+			{
+				return this._tongchiphi;
+			}
+			set
+			{
+				if ((this._tongchiphi != value))
+				{
+					this._tongchiphi = value;
 				}
 			}
 		}

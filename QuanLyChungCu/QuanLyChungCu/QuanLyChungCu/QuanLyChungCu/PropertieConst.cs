@@ -16,6 +16,5 @@ namespace QuanLyChungCu
         public static string matKhau = "77181352";
         public static string quyen = "admin";
         public static bool trangThaiKetNoiDB = true;
-        public static bool trangThaiDangNhap = true;
     }
 }

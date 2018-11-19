@@ -357,7 +357,7 @@
             this.Controls.Add(this.windowsUIButtonPanel);
             this.Controls.Add(this.pnInfo);
             this.Name = "fQuanLyDichVuCanHo";
-            this.Text = "QuanLyDichVuCanHo";
+            this.Text = "Quản lý dịch vụ của căn hộ";
             this.Load += new System.EventHandler(this.fQuanLyDichVuCanHo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pnInfo)).EndInit();
             this.pnInfo.ResumeLayout(false);

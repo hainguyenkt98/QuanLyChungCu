@@ -67,12 +67,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataLinq.dbml</DependentUpon>
     </Compile>
-    <Compile Include="fDangNhap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fDangNhap.Designer.cs">
-      <DependentUpon>fDangNhap.cs</DependentUpon>
-    </Compile>
     <Compile Include="fKetNoiDataBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,11 +79,11 @@
     <Compile Include="fQuanLyCanHo.Designer.cs">
       <DependentUpon>fQuanLyCanHo.cs</DependentUpon>
     </Compile>
-    <Compile Include="fHoaDonChiPhiDichVu.cs">
+    <Compile Include="fTraCuuPhiSinhHoat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fHoaDonChiPhiDichVu.Designer.cs">
-      <DependentUpon>fHoaDonChiPhiDichVu.cs</DependentUpon>
+    <Compile Include="fTraCuuPhiSinhHoat.Designer.cs">
+      <DependentUpon>fTraCuuPhiSinhHoat.cs</DependentUpon>
     </Compile>
     <Compile Include="fQuanLyNhanVien.cs">
       <SubType>Form</SubType>
@@ -121,14 +115,11 @@
     <None Include="DataLinq.dbml.layout">
       <DependentUpon>DataLinq.dbml</DependentUpon>
     </None>
-    <EmbeddedResource Include="fHoaDonChiPhiDichVu.resx">
-      <DependentUpon>fHoaDonChiPhiDichVu.cs</DependentUpon>
+    <EmbeddedResource Include="fTraCuuPhiSinhHoat.resx">
+      <DependentUpon>fTraCuuPhiSinhHoat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fQuanLyDichVuCanHo.resx">
       <DependentUpon>fQuanLyDichVuCanHo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fDangNhap.resx">
-      <DependentUpon>fDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fKetNoiDataBase.resx">
       <DependentUpon>fKetNoiDataBase.cs</DependentUpon>

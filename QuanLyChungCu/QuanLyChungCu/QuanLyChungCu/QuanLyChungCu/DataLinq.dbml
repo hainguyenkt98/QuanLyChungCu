@@ -260,4 +260,13 @@
       <Column Name="luong" Type="System.Decimal" DbType="Money" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.tracuuChiPhiDichVuCanHo" Method="tracuuChiPhiDichVuCanHo" IsComposable="true">
+    <ElementType Name="tracuuChiPhiDichVuCanHoResult">
+      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="tang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ten" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="sodienthoai" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="tongchiphi" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

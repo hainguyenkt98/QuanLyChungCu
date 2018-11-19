@@ -34,6 +34,8 @@ namespace QuanLyChungCu
             {
                 CanHo ch = context.CanHos.FirstOrDefault();
                 PropertieConst.connectionString = connectionString;
+                PropertieConst.accountDB = txtTaiKhoanDB.Text.Trim();
+                PropertieConst.passDB = txtMatKhauDB.Text.Trim();
                 OnEventConnection();
             }
             catch
