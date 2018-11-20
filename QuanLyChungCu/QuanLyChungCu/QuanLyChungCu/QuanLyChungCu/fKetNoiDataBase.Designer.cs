@@ -38,13 +38,10 @@
             this.txtMatKhauDB = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txtTaiKhoanDB = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.txtTenDB = new DevExpress.XtraEditors.TextEdit();
             this.cboIP = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMatKhauDB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTaiKhoanDB.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTenDB.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureEdit1
@@ -101,7 +98,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(146, 222);
+            this.labelControl2.Location = new System.Drawing.Point(146, 178);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(76, 19);
             this.labelControl2.TabIndex = 11;
@@ -120,7 +117,7 @@
             // 
             // txtMatKhauDB
             // 
-            this.txtMatKhauDB.Location = new System.Drawing.Point(243, 263);
+            this.txtMatKhauDB.Location = new System.Drawing.Point(243, 224);
             this.txtMatKhauDB.Name = "txtMatKhauDB";
             this.txtMatKhauDB.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatKhauDB.Properties.Appearance.Options.UseFont = true;
@@ -132,7 +129,7 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(146, 266);
+            this.labelControl4.Location = new System.Drawing.Point(146, 227);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(75, 19);
             this.labelControl4.TabIndex = 16;
@@ -140,32 +137,12 @@
             // 
             // txtTaiKhoanDB
             // 
-            this.txtTaiKhoanDB.Location = new System.Drawing.Point(243, 219);
+            this.txtTaiKhoanDB.Location = new System.Drawing.Point(243, 175);
             this.txtTaiKhoanDB.Name = "txtTaiKhoanDB";
             this.txtTaiKhoanDB.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTaiKhoanDB.Properties.Appearance.Options.UseFont = true;
             this.txtTaiKhoanDB.Size = new System.Drawing.Size(197, 26);
             this.txtTaiKhoanDB.TabIndex = 3;
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.LineVisible = true;
-            this.labelControl5.Location = new System.Drawing.Point(119, 179);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(103, 19);
-            this.labelControl5.TabIndex = 19;
-            this.labelControl5.Text = "Tên Database :";
-            // 
-            // txtTenDB
-            // 
-            this.txtTenDB.Location = new System.Drawing.Point(243, 176);
-            this.txtTenDB.Name = "txtTenDB";
-            this.txtTenDB.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenDB.Properties.Appearance.Options.UseFont = true;
-            this.txtTenDB.Size = new System.Drawing.Size(197, 26);
-            this.txtTenDB.TabIndex = 2;
             // 
             // cboIP
             // 
@@ -182,8 +159,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 377);
             this.Controls.Add(this.cboIP);
-            this.Controls.Add(this.labelControl5);
-            this.Controls.Add(this.txtTenDB);
             this.Controls.Add(this.txtTaiKhoanDB);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.pictureEdit1);
@@ -198,7 +173,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMatKhauDB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTaiKhoanDB.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTenDB.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,8 +189,6 @@
         private DevExpress.XtraEditors.TextEdit txtMatKhauDB;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit txtTaiKhoanDB;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit txtTenDB;
         private System.Windows.Forms.ComboBox cboIP;
     }
 }

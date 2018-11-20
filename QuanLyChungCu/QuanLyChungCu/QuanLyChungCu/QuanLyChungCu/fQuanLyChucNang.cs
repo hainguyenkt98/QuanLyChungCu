@@ -92,16 +92,30 @@ namespace QuanLyChungCu
             pnNavBar.Enabled = true;
             this.ketNoiDB.Close();
             đăngNhậpToolStripMenuItem.Enabled = false;
-            đăngXuấtToolStripMenuItem.Enabled = false;
+            đăngXuấtToolStripMenuItem.Enabled = true;
         }
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             đăngXuấtToolStripMenuItem.Enabled = false;
             đăngNhậpToolStripMenuItem.Enabled = true;
-            PropertieConst.tenTaiKhoan = "";
-            PropertieConst.matKhau = "";
+            pnNavBar.Enabled = false;
+            PropertieConst.passDB = "";
+            PropertieConst.accountDB = "";
             PropertieConst.quyen = "";
+            ClearFormLogout();
+        }
+
+        private void ClearFormLogout()
+        {
+            if (!CheckExistForm("fTraCuuPhiSinhHoat"))
+            {
+                foreach (Form frm in this.MdiChildren)
+                {
+                    frm.Dispose();
+                    frm.Close();
+                }
+            }
         }
 
         private void btnCanHo_Click(object sender, EventArgs e)

@@ -269,4 +269,14 @@
       <Column Name="tongchiphi" Type="System.Decimal" DbType="Money" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.kiemtraDangNhap" Method="kiemtraDangNhap" IsComposable="true">
+    <Parameter Name="tendangnhap" Type="System.String" DbType="NChar(20)" />
+    <Parameter Name="matkhau" Type="System.String" DbType="NChar(20)" />
+    <ElementType Name="kiemtraDangNhapResult">
+      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="tendangnhap" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="matkhau" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="quyen" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

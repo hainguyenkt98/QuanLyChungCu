@@ -27,7 +27,7 @@ namespace QuanLyChungCu
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            string connectionString = "Data Source=" + cboIP.Text.Trim() + ";Initial Catalog=" + txtTenDB.Text.Trim() + ";User ID=" + txtTaiKhoanDB.Text.Trim() + ";Password=" + txtMatKhauDB.Text.Trim() + "";
+            string connectionString = "Data Source=" + cboIP.Text.Trim() + ";Initial Catalog= QuanLyChungCu"+ ";User ID=" + txtTaiKhoanDB.Text.Trim() + ";Password=" + txtMatKhauDB.Text.Trim() + "";
             DataLinqDataContext context = new DataLinqDataContext(connectionString);
 
             try
@@ -36,9 +36,11 @@ namespace QuanLyChungCu
                 PropertieConst.connectionString = connectionString;
                 PropertieConst.accountDB = txtTaiKhoanDB.Text.Trim();
                 PropertieConst.passDB = txtMatKhauDB.Text.Trim();
+                var userLogin = context.kiemtraDangNhap(PropertieConst.accountDB, PropertieConst.passDB).FirstOrDefault();
+                PropertieConst.quyen = userLogin.quyen;
                 OnEventConnection();
             }
-            catch
+            catch (Exception ex)
             {
                 MessageBox.Show("Thông tin kết nối tới cơ sở dữ liệu không chính xác !", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

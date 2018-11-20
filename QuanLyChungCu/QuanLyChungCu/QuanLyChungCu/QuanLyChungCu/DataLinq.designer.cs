@@ -305,6 +305,12 @@ namespace QuanLyChungCu
 		{
 			return this.CreateMethodCallQuery<tracuuChiPhiDichVuCanHoResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.kiemtraDangNhap", IsComposable=true)]
+		public IQueryable<kiemtraDangNhapResult> kiemtraDangNhap([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string tendangnhap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string matkhau)
+		{
+			return this.CreateMethodCallQuery<kiemtraDangNhapResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tendangnhap, matkhau);
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CanHo")]
@@ -2965,6 +2971,86 @@ namespace QuanLyChungCu
 				if ((this._tongchiphi != value))
 				{
 					this._tongchiphi = value;
+				}
+			}
+		}
+	}
+	
+	public partial class kiemtraDangNhapResult
+	{
+		
+		private string _ma;
+		
+		private string _tendangnhap;
+		
+		private string _matkhau;
+		
+		private string _quyen;
+		
+		public kiemtraDangNhapResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ma", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string ma
+		{
+			get
+			{
+				return this._ma;
+			}
+			set
+			{
+				if ((this._ma != value))
+				{
+					this._ma = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tendangnhap", DbType="NChar(20) NOT NULL", CanBeNull=false)]
+		public string tendangnhap
+		{
+			get
+			{
+				return this._tendangnhap;
+			}
+			set
+			{
+				if ((this._tendangnhap != value))
+				{
+					this._tendangnhap = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_matkhau", DbType="NChar(20) NOT NULL", CanBeNull=false)]
+		public string matkhau
+		{
+			get
+			{
+				return this._matkhau;
+			}
+			set
+			{
+				if ((this._matkhau != value))
+				{
+					this._matkhau = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_quyen", DbType="NChar(10)")]
+		public string quyen
+		{
+			get
+			{
+				return this._quyen;
+			}
+			set
+			{
+				if ((this._quyen != value))
+				{
+					this._quyen = value;
 				}
 			}
 		}
