@@ -89,7 +89,8 @@ namespace QuanLyChungCu
                     }
                 case "Thêm":
                     {
-                        if (isThem || isSua)
+                        if (PropertieConst.quyen.Trim() == "user")
+                            MessageBox.Show("Bạn không có quyền hạn đề thực hiện việc này !", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning); if (isThem || isSua)
                         {
                             return;
                         }
@@ -98,7 +99,8 @@ namespace QuanLyChungCu
                     }
                 case "Xóa":
                     {
-                        if(isThem || isSua)
+                        if (PropertieConst.quyen.Trim() == "user" || PropertieConst.quyen.Trim() == "manager")
+                            MessageBox.Show("Bạn không có quyền hạn đề thực hiện việc này !", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning); if (isThem || isSua)
                         {
                             return;
                         }
@@ -107,7 +109,8 @@ namespace QuanLyChungCu
                     }
                 case "Sửa":
                     {
-                        if (isThem || isSua)
+                        if (PropertieConst.quyen.Trim() == "user")
+                            MessageBox.Show("Bạn không có quyền hạn đề thực hiện việc này !", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning); if (isThem || isSua)
                         {
                             return;
                         }

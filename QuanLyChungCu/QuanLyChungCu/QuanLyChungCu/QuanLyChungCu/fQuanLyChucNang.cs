@@ -108,13 +108,10 @@ namespace QuanLyChungCu
 
         private void ClearFormLogout()
         {
-            if (!CheckExistForm("fTraCuuPhiSinhHoat"))
+            foreach (Form frm in this.MdiChildren)
             {
-                foreach (Form frm in this.MdiChildren)
-                {
-                    frm.Dispose();
-                    frm.Close();
-                }
+                frm.Dispose();
+                frm.Close();
             }
         }
 
@@ -161,6 +158,17 @@ namespace QuanLyChungCu
             {
                 ActiveChildForm("fQuanLyDichVuCanHo");
             }
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            đăngXuấtToolStripMenuItem.Enabled = false;
+            đăngNhậpToolStripMenuItem.Enabled = true;
+            pnNavBar.Enabled = false;
+            PropertieConst.passDB = "";
+            PropertieConst.accountDB = "";
+            PropertieConst.quyen = "";
+            ClearFormLogout();
         }
     }
 }
