@@ -118,8 +118,6 @@ namespace QuanLyChungCu
                     LoadQL();
                     LoadChucVu();
 
-
-
                     rowSelecting = i;
                     txtMa.Text = gridView1.GetRowCellValue(i, "Mã").ToString();
                     txtTen.Text = gridView1.GetRowCellValue(i, "Họ và tên").ToString();
@@ -156,7 +154,7 @@ namespace QuanLyChungCu
                 case "Thêm":
                     {
                         if (PropertieConst.quyen.Trim() == "user")
-                            MessageBox.Show("Bạn không có quyền hạn đề thực hiện việc này !", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Bạn không có quyền hạn đề thực hiện việc này !", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning); if (isThem || isSua)
                         {
                             return;
                         }
@@ -312,6 +310,11 @@ namespace QuanLyChungCu
         private void windowsUIButtonPanel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pnControlPri_Paint(object sender, PaintEventArgs e)
+        {
+           
         }
     }
 }

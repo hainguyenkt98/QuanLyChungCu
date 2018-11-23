@@ -52,7 +52,7 @@
             // 
             // menuFunction
             // 
-            this.menuFunction.BackColor = System.Drawing.Color.Silver;
+            this.menuFunction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(236)))), ((int)(((byte)(120)))));
             this.menuFunction.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.quảnTrịToolStripMenuItem,
             this.thônTinPhầnMềmToolStripMenuItem});
@@ -64,7 +64,7 @@
             // 
             // quảnTrịToolStripMenuItem
             // 
-            this.quảnTrịToolStripMenuItem.BackColor = System.Drawing.Color.Silver;
+            this.quảnTrịToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(236)))), ((int)(((byte)(120)))));
             this.quảnTrịToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.đăngNhậpToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem,
@@ -96,7 +96,7 @@
             // 
             // thônTinPhầnMềmToolStripMenuItem
             // 
-            this.thônTinPhầnMềmToolStripMenuItem.BackColor = System.Drawing.Color.Silver;
+            this.thônTinPhầnMềmToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(236)))), ((int)(((byte)(120)))));
             this.thônTinPhầnMềmToolStripMenuItem.Name = "thônTinPhầnMềmToolStripMenuItem";
             this.thônTinPhầnMềmToolStripMenuItem.Size = new System.Drawing.Size(132, 20);
             this.thônTinPhầnMềmToolStripMenuItem.Text = "Thông tin phần mềm";
@@ -107,7 +107,7 @@
             // 
             // pnNavBar
             // 
-            this.pnNavBar.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnNavBar.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(236)))), ((int)(((byte)(120)))));
             this.pnNavBar.Appearance.BackColor2 = System.Drawing.Color.PowderBlue;
             this.pnNavBar.Appearance.Options.UseBackColor = true;
             this.pnNavBar.Controls.Add(this.btnCanHo_DichVu);
@@ -196,11 +196,14 @@
             // 
             // fQuanLyChucNang
             // 
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(226)))), ((int)(((byte)(233)))));
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 661);
             this.Controls.Add(this.pnNavBar);
             this.Controls.Add(this.menuFunction);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "fQuanLyChucNang";
             this.Text = "Menu chính";

@@ -287,5 +287,10 @@ namespace QuanLyChungCu
         {
 
         }
+
+        private void pnControlFor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

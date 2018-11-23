@@ -117,7 +117,7 @@
             // 
             // pnControlFor
             // 
-            this.pnControlFor.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.pnControlFor.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(217)))), ((int)(((byte)(215)))));
             this.pnControlFor.Appearance.Options.UseBackColor = true;
             this.pnControlFor.Controls.Add(this.btnHuy);
             this.pnControlFor.Controls.Add(this.btnLuu);
@@ -131,6 +131,7 @@
             this.pnControlFor.Name = "pnControlFor";
             this.pnControlFor.Size = new System.Drawing.Size(239, 119);
             this.pnControlFor.TabIndex = 5;
+            this.pnControlFor.Paint += new System.Windows.Forms.PaintEventHandler(this.pnControlFor_Paint);
             // 
             // btnHuy
             // 
@@ -409,7 +410,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.labelControl1.Appearance.BackColor = System.Drawing.Color.Turquoise;
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Navy;
             this.labelControl1.Appearance.Options.UseBackColor = true;
@@ -474,6 +475,8 @@
             // 
             // fQuanLyNguoiDan
             // 
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 461);
