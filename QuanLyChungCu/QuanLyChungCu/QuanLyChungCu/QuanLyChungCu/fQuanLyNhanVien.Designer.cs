@@ -461,7 +461,7 @@
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xóa", true, windowsUIButtonImageOptions2),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Sửa", true, windowsUIButtonImageOptions3),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("In", true, windowsUIButtonImageOptions4),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Tải Lại", true, windowsUIButtonImageOptions5)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Tải lại", true, windowsUIButtonImageOptions5)});
             this.windowsUIButtonPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.windowsUIButtonPanel.ForeColor = System.Drawing.Color.Black;
             this.windowsUIButtonPanel.Location = new System.Drawing.Point(283, 469);

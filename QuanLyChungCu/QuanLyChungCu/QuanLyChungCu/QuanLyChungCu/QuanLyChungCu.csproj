@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="cboCVitem.cs" />
     <Compile Include="cboDVItem.cs" />
+    <Compile Include="cboNVitem.cs" />
     <Compile Include="DataLinq.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -78,6 +79,12 @@
     </Compile>
     <Compile Include="fQuanLyCanHo.Designer.cs">
       <DependentUpon>fQuanLyCanHo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fQuanLyTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fQuanLyTaiKhoan.Designer.cs">
+      <DependentUpon>fQuanLyTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="fTraCuuPhiSinhHoat.cs">
       <SubType>Form</SubType>
@@ -115,6 +122,9 @@
     <None Include="DataLinq.dbml.layout">
       <DependentUpon>DataLinq.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="fQuanLyTaiKhoan.resx">
+      <DependentUpon>fQuanLyTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fTraCuuPhiSinhHoat.resx">
       <DependentUpon>fTraCuuPhiSinhHoat.cs</DependentUpon>
     </EmbeddedResource>

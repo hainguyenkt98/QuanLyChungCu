@@ -57,7 +57,7 @@ namespace QuanLyChungCu
     #endregion
 		
 		public DataLinqDataContext() : 
-				base(global::QuanLyChungCu.Properties.Settings.Default.QuanLyChungCuConnectionString3, mappingSource)
+				base(global::QuanLyChungCu.Properties.Settings.Default.QuanLyChungCuConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}
@@ -150,6 +150,97 @@ namespace QuanLyChungCu
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.capnhapNhanVien")]
+		public int capnhapNhanVien([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string gioitinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaysinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string diachi, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string sdt, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maquanli, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string machucvu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, ten, gioitinh, ngaysinh, diachi, sdt, maquanli, machucvu);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.capNhatCanHo")]
+		public int capNhatCanHo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tang, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> songuoitoida, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string machusohuu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, tang, songuoitoida, machusohuu);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.capNhatCanHoDichVu")]
+		public int capNhatCanHoDichVu([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maCanHo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maDichVu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maCanHo, maDichVu);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.capNhatNguoiDan")]
+		public int capNhatNguoiDan([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string gioitinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaysinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string dantoc, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string tongiao, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string nghenghiep, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string sodienthoai, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string macanho)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, ten, gioitinh, ngaysinh, dantoc, tongiao, nghenghiep, sodienthoai, macanho);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.taoTaiKhoanDangNhap")]
+		public int taoTaiKhoanDangNhap([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string tendangnhap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string matkhau, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string quyen, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string manhanvien)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, tendangnhap, matkhau, quyen, manhanvien);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.themCanHo")]
+		public int themCanHo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tang, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> songuoitoida, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string machusohuu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, tang, songuoitoida, machusohuu);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.themCanHoDichVu")]
+		public int themCanHoDichVu([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maCanHo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maDichVu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maCanHo, maDichVu);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.themNguoiDan")]
+		public int themNguoiDan([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string gioitinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaysinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string dantoc, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string tongiao, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string nghenghiep, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string sodienthoai, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string macanho)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, ten, gioitinh, ngaysinh, dantoc, tongiao, nghenghiep, sodienthoai, macanho);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.themNhanVien")]
+		public int themNhanVien([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string gioitinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaysinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string diachi, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string sdt, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maquanli, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string machucvu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, ten, gioitinh, ngaysinh, diachi, sdt, maquanli, machucvu);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.xoaCanHo")]
+		public int xoaCanHo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.xoaCanHoDichVu")]
+		public int xoaCanHoDichVu([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maCanHo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maDichVu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maCanHo, maDichVu);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.xoaNguoiDan")]
+		public int xoaNguoiDan([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.xoaNhanVien")]
+		public int xoaNhanVien([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.kiemtraDangNhap", IsComposable=true)]
 		public IQueryable<kiemtraDangNhapResult> kiemtraDangNhap([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string tendangnhap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string matkhau)
 		{
@@ -222,93 +313,29 @@ namespace QuanLyChungCu
 			return this.CreateMethodCallQuery<layDanhSachQuanLyNguoiDanResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.layDanhSachUserLogin", IsComposable=true)]
+		public IQueryable<layDanhSachUserLoginResult> layDanhSachUserLogin()
+		{
+			return this.CreateMethodCallQuery<layDanhSachUserLoginResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.laySoTang", IsComposable=true)]
 		public System.Nullable<int> laySoTang()
 		{
 			return ((System.Nullable<int>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.capnhapNhanVien")]
-		public int capnhapNhanVien([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string gioitinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaysinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string diachi, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string sdt, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maquanli, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string machucvu)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.xoaTaiKhoan")]
+		public int xoaTaiKhoan([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string tendangnhap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string manv)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, ten, gioitinh, ngaysinh, diachi, sdt, maquanli, machucvu);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, tendangnhap, manv);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.xoaNhanVien")]
-		public int xoaNhanVien([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.suaTaiKhoan")]
+		public int suaTaiKhoan([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string tendangnhap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string matkhau, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string quyen, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string manhanvien)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.capNhatCanHo")]
-		public int capNhatCanHo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tang, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> songuoitoida, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string machusohuu)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, tang, songuoitoida, machusohuu);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.capNhatCanHoDichVu")]
-		public int capNhatCanHoDichVu([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maCanHo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maDichVu)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maCanHo, maDichVu);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.capNhatNguoiDan")]
-		public int capNhatNguoiDan([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string gioitinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaysinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string dantoc, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string tongiao, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string nghenghiep, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string sodienthoai, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string macanho)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, ten, gioitinh, ngaysinh, dantoc, tongiao, nghenghiep, sodienthoai, macanho);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.themCanHo")]
-		public int themCanHo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tang, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> songuoitoida, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string machusohuu)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, tang, songuoitoida, machusohuu);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.themCanHoDichVu")]
-		public int themCanHoDichVu([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maCanHo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maDichVu)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maCanHo, maDichVu);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.themNguoiDan")]
-		public int themNguoiDan([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string gioitinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaysinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string dantoc, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string tongiao, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string nghenghiep, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string sodienthoai, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string macanho)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, ten, gioitinh, ngaysinh, dantoc, tongiao, nghenghiep, sodienthoai, macanho);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.themNhanVien")]
-		public int themNhanVien([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string gioitinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaysinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string diachi, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string sdt, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maquanli, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string machucvu)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, ten, gioitinh, ngaysinh, diachi, sdt, maquanli, machucvu);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.xoaCanHo")]
-		public int xoaCanHo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.xoaCanHoDichVu")]
-		public int xoaCanHoDichVu([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maCanHo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maDichVu)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maCanHo, maDichVu);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.xoaNguoiDan")]
-		public int xoaNguoiDan([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, tendangnhap, matkhau, quyen, manhanvien);
 			return ((int)(result.ReturnValue));
 		}
 	}
@@ -521,6 +548,8 @@ namespace QuanLyChungCu
 		
 		private string _quyen;
 		
+		private string _manv;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -533,6 +562,8 @@ namespace QuanLyChungCu
     partial void OnmatkhauChanged();
     partial void OnquyenChanging(string value);
     partial void OnquyenChanged();
+    partial void OnmanvChanging(string value);
+    partial void OnmanvChanged();
     #endregion
 		
 		public UserLogin()
@@ -616,6 +647,26 @@ namespace QuanLyChungCu
 					this._quyen = value;
 					this.SendPropertyChanged("quyen");
 					this.OnquyenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_manv", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string manv
+		{
+			get
+			{
+				return this._manv;
+			}
+			set
+			{
+				if ((this._manv != value))
+				{
+					this.OnmanvChanging(value);
+					this.SendPropertyChanging();
+					this._manv = value;
+					this.SendPropertyChanged("manv");
+					this.OnmanvChanged();
 				}
 			}
 		}
@@ -2167,7 +2218,7 @@ namespace QuanLyChungCu
 		
 		private string _ten;
 		
-		private decimal _chiphi;
+		private System.Nullable<decimal> _chiphi;
 		
 		public layDanhSachCanHoDichVuResult()
 		{
@@ -2205,7 +2256,7 @@ namespace QuanLyChungCu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maDV", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maDV", DbType="NChar(10)")]
 		public string maDV
 		{
 			get
@@ -2221,7 +2272,7 @@ namespace QuanLyChungCu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ten", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ten", DbType="NChar(30)")]
 		public string ten
 		{
 			get
@@ -2237,8 +2288,8 @@ namespace QuanLyChungCu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_chiphi", DbType="Money NOT NULL")]
-		public decimal chiphi
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_chiphi", DbType="Money")]
+		public System.Nullable<decimal> chiphi
 		{
 			get
 			{
@@ -2583,8 +2634,6 @@ namespace QuanLyChungCu
 		
 		private string _sodienthoai;
 		
-		private string _macanho;
-		
 		public layDanhSachNguoiDanResult()
 		{
 		}
@@ -2685,7 +2734,7 @@ namespace QuanLyChungCu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nghenghiep", DbType="NChar(30)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nghenghiep", DbType="NChar(10)")]
 		public string nghenghiep
 		{
 			get
@@ -2713,22 +2762,6 @@ namespace QuanLyChungCu
 				if ((this._sodienthoai != value))
 				{
 					this._sodienthoai = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_macanho", DbType="NChar(10)")]
-		public string macanho
-		{
-			get
-			{
-				return this._macanho;
-			}
-			set
-			{
-				if ((this._macanho != value))
-				{
-					this._macanho = value;
 				}
 			}
 		}
@@ -3069,6 +3102,122 @@ namespace QuanLyChungCu
 				if ((this._tang != value))
 				{
 					this._tang = value;
+				}
+			}
+		}
+	}
+	
+	public partial class layDanhSachUserLoginResult
+	{
+		
+		private string _ma;
+		
+		private string _tendangnhap;
+		
+		private string _matkhau;
+		
+		private string _quyen;
+		
+		private string _manv;
+		
+		private string _ten;
+		
+		public layDanhSachUserLoginResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ma", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string ma
+		{
+			get
+			{
+				return this._ma;
+			}
+			set
+			{
+				if ((this._ma != value))
+				{
+					this._ma = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tendangnhap", DbType="NChar(20) NOT NULL", CanBeNull=false)]
+		public string tendangnhap
+		{
+			get
+			{
+				return this._tendangnhap;
+			}
+			set
+			{
+				if ((this._tendangnhap != value))
+				{
+					this._tendangnhap = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_matkhau", DbType="NChar(20) NOT NULL", CanBeNull=false)]
+		public string matkhau
+		{
+			get
+			{
+				return this._matkhau;
+			}
+			set
+			{
+				if ((this._matkhau != value))
+				{
+					this._matkhau = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_quyen", DbType="NChar(10)")]
+		public string quyen
+		{
+			get
+			{
+				return this._quyen;
+			}
+			set
+			{
+				if ((this._quyen != value))
+				{
+					this._quyen = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_manv", DbType="NChar(10)")]
+		public string manv
+		{
+			get
+			{
+				return this._manv;
+			}
+			set
+			{
+				if ((this._manv != value))
+				{
+					this._manv = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ten", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		public string ten
+		{
+			get
+			{
+				return this._ten;
+			}
+			set
+			{
+				if ((this._ten != value))
+				{
+					this._ten = value;
 				}
 			}
 		}

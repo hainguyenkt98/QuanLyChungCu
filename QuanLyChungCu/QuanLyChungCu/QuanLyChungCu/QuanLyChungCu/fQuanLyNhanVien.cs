@@ -81,8 +81,6 @@ namespace QuanLyChungCu
             pnControlPri.Enabled = true;
             LoadQL();
             LoadChucVu();
-
-
         }
         private void Xoa()
         {
@@ -182,7 +180,7 @@ namespace QuanLyChungCu
                         Sua();
                         break;
                     }
-                case "Tải Lại":
+                case "Tải lại":
                     {
                         if (isThem || isSua)
                         {

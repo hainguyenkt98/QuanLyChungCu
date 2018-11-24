@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLyChungCu" Class="DataLinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.1.132;Initial Catalog=QuanLyChungCu;Persist Security Info=True;User ID=admindb" SettingsObjectName="QuanLyChungCu.Properties.Settings" SettingsPropertyName="QuanLyChungCuConnectionString3" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=171.244.10.49,1433\SQLEXPRESS;Initial Catalog=QuanLyChungCu;Persist Security Info=True;User ID=hai" SettingsObjectName="QuanLyChungCu.Properties.Settings" SettingsPropertyName="QuanLyChungCuConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CanHo" Member="CanHos">
     <Type Name="CanHo">
       <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -16,6 +16,7 @@
       <Column Name="tendangnhap" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="matkhau" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="quyen" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="manv" Type="System.String" DbType="NChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.CanHo_DichVu" Member="CanHo_DichVus">
@@ -80,119 +81,6 @@
       <Association Name="NguoiDan_SoHuuCanHo" Member="NguoiDan" ThisKey="machuho" OtherKey="ma" Type="NguoiDan" IsForeignKey="true" />
     </Type>
   </Table>
-  <Function Name="dbo.kiemtraDangNhap" Method="kiemtraDangNhap" IsComposable="true">
-    <Parameter Name="tendangnhap" Type="System.String" DbType="NChar(20)" />
-    <Parameter Name="matkhau" Type="System.String" DbType="NChar(20)" />
-    <ElementType Name="kiemtraDangNhapResult">
-      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="tendangnhap" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="matkhau" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="quyen" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.tracuuChiPhiDichVuCanHo" Method="tracuuChiPhiDichVuCanHo" IsComposable="true">
-    <ElementType Name="tracuuChiPhiDichVuCanHoResult">
-      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="tang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ten" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="sodienthoai" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="tongchiphi" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.layDanhSachCanHo" Method="layDanhSachCanHo" IsComposable="true">
-    <ElementType Name="layDanhSachCanHoResult">
-      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="tang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="songuoiotoida" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.layDanhSachCanHoDichVu" Method="layDanhSachCanHoDichVu" IsComposable="true">
-    <ElementType Name="layDanhSachCanHoDichVuResult">
-      <Column Name="maCH" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="tang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="maDV" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="ten" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="chiphi" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.layDanhSachCanHoTheoTang" Method="layDanhSachCanHoTheoTang" IsComposable="true">
-    <Parameter Name="tang" Type="System.Int32" DbType="Int" />
-    <ElementType Name="layDanhSachCanHoTheoTangResult">
-      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="tang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="songuoiotoida" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.layDanhSachCanHoVaChuSoHuu" Method="layDanhSachCanHoVaChuSoHuu" IsComposable="true">
-    <ElementType Name="layDanhSachCanHoVaChuSoHuuResult">
-      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="tang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="songuoiotoida" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="machuho" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="ten" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.LayDanhSachChucVu" Method="LayDanhSachChucVu" IsComposable="true">
-    <ElementType Name="LayDanhSachChucVuResult">
-      <Column Name="machucvu" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="tenchucvu" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
-      <Column Name="luong" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.layDanhSachDichVu" Method="layDanhSachDichVu" IsComposable="true">
-    <ElementType Name="layDanhSachDichVuResult">
-      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="ten" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="chiphi" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.LayDanhSachMaQuanLiNV" Method="LayDanhSachMaQuanLiNV" IsComposable="true">
-    <ElementType Name="LayDanhSachMaQuanLiNVResult">
-      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.layDanhSachNguoiDan" Method="layDanhSachNguoiDan" IsComposable="true">
-    <ElementType Name="layDanhSachNguoiDanResult">
-      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="ten" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="gioitinh" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="ngaysinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="dantoc" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="tongiao" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="nghenghiep" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
-      <Column Name="sodienthoai" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="macanho" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.layDanhSachNhanVien" Method="layDanhSachNhanVien" IsComposable="true">
-    <ElementType Name="layDanhSachNhanVienResult">
-      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="ten" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="gioitinh" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="ngaysinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="diachi" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="sodienthoai" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="maquanly" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="machucvu" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.layDanhSachQuanLyNguoiDan" Method="layDanhSachQuanLyNguoiDan" IsComposable="true">
-    <ElementType Name="layDanhSachQuanLyNguoiDanResult">
-      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="ten" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="gioitinh" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="ngaysinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="dantoc" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="tongiao" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="nghenghiep" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
-      <Column Name="sodienthoai" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="macanho" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="tang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.laySoTang" Method="laySoTang" IsComposable="true">
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.capnhapNhanVien" Method="capnhapNhanVien">
     <Parameter Name="ma" Type="System.String" DbType="NChar(10)" />
     <Parameter Name="ten" Type="System.String" DbType="NChar(30)" />
@@ -202,10 +90,6 @@
     <Parameter Name="sdt" Type="System.String" DbType="NChar(10)" />
     <Parameter Name="maquanli" Type="System.String" DbType="NChar(10)" />
     <Parameter Name="machucvu" Type="System.String" DbType="NChar(10)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.xoaNhanVien" Method="xoaNhanVien">
-    <Parameter Name="ma" Type="System.String" DbType="NChar(10)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.capNhatCanHo" Method="capNhatCanHo">
@@ -230,6 +114,14 @@
     <Parameter Name="nghenghiep" Type="System.String" DbType="NChar(30)" />
     <Parameter Name="sodienthoai" Type="System.String" DbType="NChar(10)" />
     <Parameter Name="macanho" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.taoTaiKhoanDangNhap" Method="taoTaiKhoanDangNhap">
+    <Parameter Name="ma" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="tendangnhap" Type="System.String" DbType="NChar(20)" />
+    <Parameter Name="matkhau" Type="System.String" DbType="NChar(20)" />
+    <Parameter Name="quyen" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="manhanvien" Type="System.String" DbType="NChar(10)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.themCanHo" Method="themCanHo">
@@ -278,6 +170,146 @@
   </Function>
   <Function Name="dbo.xoaNguoiDan" Method="xoaNguoiDan">
     <Parameter Name="ma" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.xoaNhanVien" Method="xoaNhanVien">
+    <Parameter Name="ma" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.kiemtraDangNhap" Method="kiemtraDangNhap" IsComposable="true">
+    <Parameter Name="tendangnhap" Type="System.String" DbType="NChar(20)" />
+    <Parameter Name="matkhau" Type="System.String" DbType="NChar(20)" />
+    <ElementType Name="kiemtraDangNhapResult">
+      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="tendangnhap" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="matkhau" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="quyen" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.tracuuChiPhiDichVuCanHo" Method="tracuuChiPhiDichVuCanHo" IsComposable="true">
+    <ElementType Name="tracuuChiPhiDichVuCanHoResult">
+      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="tang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ten" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="sodienthoai" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="tongchiphi" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.layDanhSachCanHo" Method="layDanhSachCanHo" IsComposable="true">
+    <ElementType Name="layDanhSachCanHoResult">
+      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="tang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="songuoiotoida" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.layDanhSachCanHoDichVu" Method="layDanhSachCanHoDichVu" IsComposable="true">
+    <ElementType Name="layDanhSachCanHoDichVuResult">
+      <Column Name="maCH" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="tang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="maDV" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="ten" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="chiphi" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.layDanhSachCanHoTheoTang" Method="layDanhSachCanHoTheoTang" IsComposable="true">
+    <Parameter Name="tang" Type="System.Int32" DbType="Int" />
+    <ElementType Name="layDanhSachCanHoTheoTangResult">
+      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="tang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="songuoiotoida" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.layDanhSachCanHoVaChuSoHuu" Method="layDanhSachCanHoVaChuSoHuu" IsComposable="true">
+    <ElementType Name="layDanhSachCanHoVaChuSoHuuResult">
+      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="tang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="songuoiotoida" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="machuho" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ten" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LayDanhSachChucVu" Method="LayDanhSachChucVu" IsComposable="true">
+    <ElementType Name="LayDanhSachChucVuResult">
+      <Column Name="machucvu" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="tenchucvu" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="luong" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.layDanhSachDichVu" Method="layDanhSachDichVu" IsComposable="true">
+    <ElementType Name="layDanhSachDichVuResult">
+      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ten" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="chiphi" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LayDanhSachMaQuanLiNV" Method="LayDanhSachMaQuanLiNV" IsComposable="true">
+    <ElementType Name="LayDanhSachMaQuanLiNVResult">
+      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.layDanhSachNguoiDan" Method="layDanhSachNguoiDan" IsComposable="true">
+    <ElementType Name="layDanhSachNguoiDanResult">
+      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ten" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="gioitinh" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ngaysinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="dantoc" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="tongiao" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="nghenghiep" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="sodienthoai" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.layDanhSachNhanVien" Method="layDanhSachNhanVien" IsComposable="true">
+    <ElementType Name="layDanhSachNhanVienResult">
+      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ten" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="gioitinh" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ngaysinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="diachi" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="sodienthoai" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="maquanly" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="machucvu" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.layDanhSachQuanLyNguoiDan" Method="layDanhSachQuanLyNguoiDan" IsComposable="true">
+    <ElementType Name="layDanhSachQuanLyNguoiDanResult">
+      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ten" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="gioitinh" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ngaysinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="dantoc" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="tongiao" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="nghenghiep" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="sodienthoai" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="macanho" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="tang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.layDanhSachUserLogin" Method="layDanhSachUserLogin" IsComposable="true">
+    <ElementType Name="layDanhSachUserLoginResult">
+      <Column Name="ma" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="tendangnhap" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="matkhau" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="quyen" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="manv" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="ten" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.laySoTang" Method="laySoTang" IsComposable="true">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.xoaTaiKhoan" Method="xoaTaiKhoan">
+    <Parameter Name="ma" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="tendangnhap" Type="System.String" DbType="NChar(20)" />
+    <Parameter Name="manv" Type="System.String" DbType="NChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.suaTaiKhoan" Method="suaTaiKhoan">
+    <Parameter Name="ma" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="tendangnhap" Type="System.String" DbType="NChar(20)" />
+    <Parameter Name="matkhau" Type="System.String" DbType="NChar(20)" />
+    <Parameter Name="quyen" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="manhanvien" Type="System.String" DbType="NChar(10)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

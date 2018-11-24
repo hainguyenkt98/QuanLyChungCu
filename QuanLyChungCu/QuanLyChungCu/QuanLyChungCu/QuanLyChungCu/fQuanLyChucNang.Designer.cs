@@ -44,6 +44,7 @@
             this.btnCanHo = new DevExpress.XtraEditors.SimpleButton();
             this.btnNhanVien = new DevExpress.XtraEditors.SimpleButton();
             this.btnNguoiDan = new DevExpress.XtraEditors.SimpleButton();
+            this.btnQuanLyTaiKhoan = new DevExpress.XtraEditors.SimpleButton();
             this.menuFunction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnNavBar)).BeginInit();
@@ -113,6 +114,7 @@
             this.pnNavBar.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(236)))), ((int)(((byte)(120)))));
             this.pnNavBar.Appearance.BackColor2 = System.Drawing.Color.PowderBlue;
             this.pnNavBar.Appearance.Options.UseBackColor = true;
+            this.pnNavBar.Controls.Add(this.btnQuanLyTaiKhoan);
             this.pnNavBar.Controls.Add(this.btnCanHo_DichVu);
             this.pnNavBar.Controls.Add(this.btnDangXuat);
             this.pnNavBar.Controls.Add(this.btnUser);
@@ -143,7 +145,7 @@
             // 
             this.btnDangXuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.ImageOptions.Image")));
             this.btnDangXuat.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnDangXuat.Location = new System.Drawing.Point(595, 3);
+            this.btnDangXuat.Location = new System.Drawing.Point(5, 3);
             this.btnDangXuat.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.Size = new System.Drawing.Size(70, 60);
@@ -179,7 +181,7 @@
             // 
             this.btnNhanVien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNhanVien.ImageOptions.Image")));
             this.btnNhanVien.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnNhanVien.Location = new System.Drawing.Point(0, 3);
+            this.btnNhanVien.Location = new System.Drawing.Point(596, 3);
             this.btnNhanVien.LookAndFeel.UseDefaultLookAndFeel = false;
             this.btnNhanVien.Name = "btnNhanVien";
             this.btnNhanVien.Size = new System.Drawing.Size(70, 60);
@@ -198,6 +200,17 @@
             this.btnNguoiDan.Size = new System.Drawing.Size(70, 60);
             this.btnNguoiDan.TabIndex = 0;
             this.btnNguoiDan.Click += new System.EventHandler(this.btnNguoiDan_Click);
+            // 
+            // btnQuanLyTaiKhoan
+            // 
+            this.btnQuanLyTaiKhoan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnQuanLyTaiKhoan.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnQuanLyTaiKhoan.Location = new System.Drawing.Point(721, 3);
+            this.btnQuanLyTaiKhoan.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnQuanLyTaiKhoan.Name = "btnQuanLyTaiKhoan";
+            this.btnQuanLyTaiKhoan.Size = new System.Drawing.Size(70, 60);
+            this.btnQuanLyTaiKhoan.TabIndex = 8;
+            this.btnQuanLyTaiKhoan.Click += new System.EventHandler(this.btnQuanLyTaiKhoan_Click);
             // 
             // fQuanLyChucNang
             // 
@@ -241,5 +254,6 @@
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thônTinPhầnMềmToolStripMenuItem;
         private DevExpress.XtraEditors.SimpleButton btnCanHo_DichVu;
+        private DevExpress.XtraEditors.SimpleButton btnQuanLyTaiKhoan;
     }
 }

@@ -93,6 +93,16 @@ namespace QuanLyChungCu
             this.ketNoiDB.Close();
             đăngNhậpToolStripMenuItem.Enabled = false;
             đăngXuấtToolStripMenuItem.Enabled = true;
+            if(PropertieConst.quyen.Trim() == 'admin')
+            {
+                btnQuanLyTaiKhoan.Enabled = true;
+                btnQuanLyTaiKhoan.Visible = true;
+            }
+            else
+            {
+                btnQuanLyTaiKhoan.Enabled = false;
+                btnQuanLyTaiKhoan.Visible = false;
+            }
         }
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
@@ -169,6 +179,21 @@ namespace QuanLyChungCu
             PropertieConst.accountDB = "";
             PropertieConst.quyen = "";
             ClearFormLogout();
+        }
+
+        private void btnQuanLyTaiKhoan_Click(object sender, EventArgs e)
+        {
+            if (!CheckExistForm("fQuanLyTaiKhoan"))
+            {
+                fQuanLyTaiKhoan xf2 = new fQuanLyTaiKhoan();
+                xf2.MdiParent = this;
+                xf2.Name = "fQuanLyTaiKhoan";
+                xf2.Show();
+            }
+            else
+            {
+                ActiveChildForm("fQuanLyTaiKhoan");
+            }
         }
     }
 }
