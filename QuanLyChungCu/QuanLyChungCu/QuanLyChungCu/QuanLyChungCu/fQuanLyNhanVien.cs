@@ -266,7 +266,7 @@ namespace QuanLyChungCu
             var DSQLNV = context.LayDanhSachMaQuanLiNV();
             foreach (var QL in DSQLNV)
             {
-                cboNguoiQuanLi.Items.Add(QL.txt.ToString().Trim());
+                cboNguoiQuanLi.Items.Add(QL.ma.ToString().Trim());
             }
 
         }

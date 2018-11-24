@@ -54,5 +54,16 @@ namespace QuanLyChungCu.Properties {
                 return ((string)(this["QuanLyChungCuConnectionString2"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.132;Initial Catalog=QuanLyChungCu;Persist Security Info=Tru" +
+            "e;User ID=admindb;Password=123123")]
+        public string QuanLyChungCuConnectionString3 {
+            get {
+                return ((string)(this["QuanLyChungCuConnectionString3"]));
+            }
+        }
     }
 }
