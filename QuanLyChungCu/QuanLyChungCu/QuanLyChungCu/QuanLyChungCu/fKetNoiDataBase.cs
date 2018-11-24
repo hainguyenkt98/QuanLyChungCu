@@ -236,5 +236,10 @@ namespace QuanLyChungCu
             }
             return "C";
         }
+
+        private void pictureEdit2_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
