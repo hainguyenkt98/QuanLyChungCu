@@ -93,7 +93,7 @@ namespace QuanLyChungCu
             this.ketNoiDB.Close();
             đăngNhậpToolStripMenuItem.Enabled = false;
             đăngXuấtToolStripMenuItem.Enabled = true;
-            if(PropertieConst.quyen.Trim() == 'admin')
+            if(PropertieConst.quyen.Trim() == "admin")
             {
                 btnQuanLyTaiKhoan.Enabled = true;
                 btnQuanLyTaiKhoan.Visible = true;
