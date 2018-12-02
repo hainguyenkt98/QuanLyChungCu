@@ -149,6 +149,7 @@ namespace QuanLyChungCu
                 }
                 catch (Exception ex)
                 {
+                    
                     MessageBox.Show("Thông tin nhập vào không hợp lệ !", "Nhắc nhở !", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 

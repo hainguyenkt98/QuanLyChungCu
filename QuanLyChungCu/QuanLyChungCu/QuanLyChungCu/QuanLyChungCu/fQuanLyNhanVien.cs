@@ -57,9 +57,23 @@ namespace QuanLyChungCu
                 row[3] = item.ngaysinh.ToString("dd/MM/yyyy").Trim();
                 row[4] = item.diachi.ToString().Trim();
                 row[5] = item.sodienthoai.ToString().Trim();
-                row[6] = item.maquanly.ToString().Trim();
-                row[7] = item.machucvu.ToString().Trim();
-              
+                if (item.maquanly == null)
+                {
+                    row[6] = "";
+                }
+                else
+                {
+                    row[6] = item.maquanly.ToString().Trim();
+                }
+                if (item.machucvu == null)
+                {
+                    row[7] = "";
+                }
+                else
+                {
+                    row[7] = item.machucvu.ToString().Trim();
+                }
+
                 dt.Rows.Add(row);
             }
             gridControl.DataSource = dt;
@@ -152,31 +166,39 @@ namespace QuanLyChungCu
                 case "Thêm":
                     {
                         if (PropertieConst.quyen.Trim() == "user")
-                            MessageBox.Show("Bạn không có quyền hạn đề thực hiện việc này !", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning); if (isThem || isSua)
                         {
+                            MessageBox.Show("Bạn không có quyền hạn đề thực hiện việc này !", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
+                        if (isThem || isSua)                        
+                            return;
+                        
                         Them();
                         break;
                     }
                 case "Xóa":
                     {
                         if (PropertieConst.quyen.Trim() == "user" || PropertieConst.quyen.Trim() == "manager")
-                            MessageBox.Show("Bạn không có quyền hạn đề thực hiện việc này !", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning); if (isThem || isSua)
                         {
+                            MessageBox.Show("Bạn không có quyền hạn đề thực hiện việc này !", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
+                        if (isThem || isSua)                     
+                            return;
+                        
                         Xoa();
                         break;
                     }
                 case "Sửa":
                     {
                         if (PropertieConst.quyen.Trim() == "user")
-                            MessageBox.Show("Bạn không có quyền hạn đề thực hiện việc này !", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        if (isThem || isSua)
                         {
+                            MessageBox.Show("Bạn không có quyền hạn đề thực hiện việc này !", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
+                        if (isThem || isSua)                       
+                            return;
+                        
                         Sua();
                         break;
                     }

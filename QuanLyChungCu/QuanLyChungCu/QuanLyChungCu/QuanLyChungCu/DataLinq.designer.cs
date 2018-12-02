@@ -57,7 +57,7 @@ namespace QuanLyChungCu
     #endregion
 		
 		public DataLinqDataContext() : 
-				base(global::QuanLyChungCu.Properties.Settings.Default.QuanLyChungCuConnectionString2, mappingSource)
+				base(global::QuanLyChungCu.Properties.Settings.Default.QuanLyChungCuConnectionString4, mappingSource)
 		{
 			OnCreated();
 		}
@@ -157,6 +157,13 @@ namespace QuanLyChungCu
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.xoaTaiKhoan")]
+		public int xoaTaiKhoan([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string tendangnhap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string manv)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, tendangnhap, manv);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.capNhatCanHo")]
 		public int capNhatCanHo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tang, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> songuoitoida, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string machusohuu)
 		{
@@ -175,6 +182,13 @@ namespace QuanLyChungCu
 		public int capNhatNguoiDan([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string gioitinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaysinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string dantoc, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string tongiao, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string nghenghiep, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string sodienthoai, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string macanho)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, ten, gioitinh, ngaysinh, dantoc, tongiao, nghenghiep, sodienthoai, macanho);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.suaTaiKhoan")]
+		public int suaTaiKhoan([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string tendangnhap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string matkhau, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string quyen, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string manhanvien)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, tendangnhap, matkhau, quyen, manhanvien);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -324,20 +338,6 @@ namespace QuanLyChungCu
 		{
 			return ((System.Nullable<int>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
 		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.xoaTaiKhoan")]
-		public int xoaTaiKhoan([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string tendangnhap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string manv)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, tendangnhap, manv);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.suaTaiKhoan")]
-		public int suaTaiKhoan([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string tendangnhap, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string matkhau, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string quyen, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string manhanvien)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, tendangnhap, matkhau, quyen, manhanvien);
-			return ((int)(result.ReturnValue));
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CanHo")]
@@ -356,7 +356,7 @@ namespace QuanLyChungCu
 		
 		private EntitySet<NguoiDan> _NguoiDans;
 		
-		private EntitySet<SoHuuCanHo> _SoHuuCanHos;
+		private EntityRef<SoHuuCanHo> _SoHuuCanHo;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -374,7 +374,7 @@ namespace QuanLyChungCu
 		{
 			this._CanHo_DichVus = new EntitySet<CanHo_DichVu>(new Action<CanHo_DichVu>(this.attach_CanHo_DichVus), new Action<CanHo_DichVu>(this.detach_CanHo_DichVus));
 			this._NguoiDans = new EntitySet<NguoiDan>(new Action<NguoiDan>(this.attach_NguoiDans), new Action<NguoiDan>(this.detach_NguoiDans));
-			this._SoHuuCanHos = new EntitySet<SoHuuCanHo>(new Action<SoHuuCanHo>(this.attach_SoHuuCanHos), new Action<SoHuuCanHo>(this.detach_SoHuuCanHos));
+			this._SoHuuCanHo = default(EntityRef<SoHuuCanHo>);
 			OnCreated();
 		}
 		
@@ -464,16 +464,32 @@ namespace QuanLyChungCu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CanHo_SoHuuCanHo", Storage="_SoHuuCanHos", ThisKey="ma", OtherKey="macanho")]
-		public EntitySet<SoHuuCanHo> SoHuuCanHos
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CanHo_SoHuuCanHo", Storage="_SoHuuCanHo", ThisKey="ma", OtherKey="macanho", IsUnique=true, IsForeignKey=false)]
+		public SoHuuCanHo SoHuuCanHo
 		{
 			get
 			{
-				return this._SoHuuCanHos;
+				return this._SoHuuCanHo.Entity;
 			}
 			set
 			{
-				this._SoHuuCanHos.Assign(value);
+				SoHuuCanHo previousValue = this._SoHuuCanHo.Entity;
+				if (((previousValue != value) 
+							|| (this._SoHuuCanHo.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._SoHuuCanHo.Entity = null;
+						previousValue.CanHo = null;
+					}
+					this._SoHuuCanHo.Entity = value;
+					if ((value != null))
+					{
+						value.CanHo = this;
+					}
+					this.SendPropertyChanged("SoHuuCanHo");
+				}
 			}
 		}
 		
@@ -520,18 +536,6 @@ namespace QuanLyChungCu
 			this.SendPropertyChanging();
 			entity.CanHo = null;
 		}
-		
-		private void attach_SoHuuCanHos(SoHuuCanHo entity)
-		{
-			this.SendPropertyChanging();
-			entity.CanHo = this;
-		}
-		
-		private void detach_SoHuuCanHos(SoHuuCanHo entity)
-		{
-			this.SendPropertyChanging();
-			entity.CanHo = null;
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UserLogin")]
@@ -549,6 +553,8 @@ namespace QuanLyChungCu
 		private string _quyen;
 		
 		private string _manv;
+		
+		private EntityRef<NhanVien> _NhanVien;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -568,6 +574,7 @@ namespace QuanLyChungCu
 		
 		public UserLogin()
 		{
+			this._NhanVien = default(EntityRef<NhanVien>);
 			OnCreated();
 		}
 		
@@ -651,7 +658,7 @@ namespace QuanLyChungCu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_manv", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_manv", DbType="NChar(10) NOT NULL", CanBeNull=false)]
 		public string manv
 		{
 			get
@@ -662,11 +669,49 @@ namespace QuanLyChungCu
 			{
 				if ((this._manv != value))
 				{
+					if (this._NhanVien.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnmanvChanging(value);
 					this.SendPropertyChanging();
 					this._manv = value;
 					this.SendPropertyChanged("manv");
 					this.OnmanvChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_UserLogin", Storage="_NhanVien", ThisKey="manv", OtherKey="ma", IsForeignKey=true)]
+		public NhanVien NhanVien
+		{
+			get
+			{
+				return this._NhanVien.Entity;
+			}
+			set
+			{
+				NhanVien previousValue = this._NhanVien.Entity;
+				if (((previousValue != value) 
+							|| (this._NhanVien.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._NhanVien.Entity = null;
+						previousValue.UserLogins.Remove(this);
+					}
+					this._NhanVien.Entity = value;
+					if ((value != null))
+					{
+						value.UserLogins.Add(this);
+						this._manv = value.ma;
+					}
+					else
+					{
+						this._manv = default(string);
+					}
+					this.SendPropertyChanged("NhanVien");
 				}
 			}
 		}
@@ -1481,6 +1526,8 @@ namespace QuanLyChungCu
 		
 		private string _machucvu;
 		
+		private EntitySet<UserLogin> _UserLogins;
+		
 		private EntitySet<NhanVien> _NhanViens;
 		
 		private EntityRef<ChucVu> _ChucVu;
@@ -1511,6 +1558,7 @@ namespace QuanLyChungCu
 		
 		public NhanVien()
 		{
+			this._UserLogins = new EntitySet<UserLogin>(new Action<UserLogin>(this.attach_UserLogins), new Action<UserLogin>(this.detach_UserLogins));
 			this._NhanViens = new EntitySet<NhanVien>(new Action<NhanVien>(this.attach_NhanViens), new Action<NhanVien>(this.detach_NhanViens));
 			this._ChucVu = default(EntityRef<ChucVu>);
 			this._NhanVien1 = default(EntityRef<NhanVien>);
@@ -1685,6 +1733,19 @@ namespace QuanLyChungCu
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_UserLogin", Storage="_UserLogins", ThisKey="ma", OtherKey="manv")]
+		public EntitySet<UserLogin> UserLogins
+		{
+			get
+			{
+				return this._UserLogins;
+			}
+			set
+			{
+				this._UserLogins.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NhanVien_NhanVien", Storage="_NhanViens", ThisKey="ma", OtherKey="maquanly")]
 		public EntitySet<NhanVien> NhanViens
 		{
@@ -1786,6 +1847,18 @@ namespace QuanLyChungCu
 			}
 		}
 		
+		private void attach_UserLogins(UserLogin entity)
+		{
+			this.SendPropertyChanging();
+			entity.NhanVien = this;
+		}
+		
+		private void detach_UserLogins(UserLogin entity)
+		{
+			this.SendPropertyChanging();
+			entity.NhanVien = null;
+		}
+		
 		private void attach_NhanViens(NhanVien entity)
 		{
 			this.SendPropertyChanging();
@@ -1830,7 +1903,7 @@ namespace QuanLyChungCu
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_machuho", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_machuho", DbType="NChar(10) NOT NULL", CanBeNull=false)]
 		public string machuho
 		{
 			get
@@ -1895,12 +1968,12 @@ namespace QuanLyChungCu
 					if ((previousValue != null))
 					{
 						this._CanHo.Entity = null;
-						previousValue.SoHuuCanHos.Remove(this);
+						previousValue.SoHuuCanHo = null;
 					}
 					this._CanHo.Entity = value;
 					if ((value != null))
 					{
-						value.SoHuuCanHos.Add(this);
+						value.SoHuuCanHo = this;
 						this._macanho = value.ma;
 					}
 					else
@@ -1978,6 +2051,8 @@ namespace QuanLyChungCu
 		
 		private string _quyen;
 		
+		private string _manv;
+		
 		public kiemtraDangNhapResult()
 		{
 		}
@@ -2042,6 +2117,22 @@ namespace QuanLyChungCu
 				if ((this._quyen != value))
 				{
 					this._quyen = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_manv", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		public string manv
+		{
+			get
+			{
+				return this._manv;
+			}
+			set
+			{
+				if ((this._manv != value))
+				{
+					this._manv = value;
 				}
 			}
 		}
@@ -2218,7 +2309,7 @@ namespace QuanLyChungCu
 		
 		private string _ten;
 		
-		private System.Nullable<decimal> _chiphi;
+		private decimal _chiphi;
 		
 		public layDanhSachCanHoDichVuResult()
 		{
@@ -2256,7 +2347,7 @@ namespace QuanLyChungCu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maDV", DbType="NChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maDV", DbType="NChar(10) NOT NULL", CanBeNull=false)]
 		public string maDV
 		{
 			get
@@ -2272,7 +2363,7 @@ namespace QuanLyChungCu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ten", DbType="NChar(30)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ten", DbType="NChar(30) NOT NULL", CanBeNull=false)]
 		public string ten
 		{
 			get
@@ -2288,8 +2379,8 @@ namespace QuanLyChungCu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_chiphi", DbType="Money")]
-		public System.Nullable<decimal> chiphi
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_chiphi", DbType="Money NOT NULL")]
+		public decimal chiphi
 		{
 			get
 			{
@@ -2634,6 +2725,8 @@ namespace QuanLyChungCu
 		
 		private string _sodienthoai;
 		
+		private string _macanho;
+		
 		public layDanhSachNguoiDanResult()
 		{
 		}
@@ -2734,7 +2827,7 @@ namespace QuanLyChungCu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nghenghiep", DbType="NChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nghenghiep", DbType="NChar(30)")]
 		public string nghenghiep
 		{
 			get
@@ -2762,6 +2855,22 @@ namespace QuanLyChungCu
 				if ((this._sodienthoai != value))
 				{
 					this._sodienthoai = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_macanho", DbType="NChar(10)")]
+		public string macanho
+		{
+			get
+			{
+				return this._macanho;
+			}
+			set
+			{
+				if ((this._macanho != value))
+				{
+					this._macanho = value;
 				}
 			}
 		}
@@ -3190,7 +3299,7 @@ namespace QuanLyChungCu
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_manv", DbType="NChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_manv", DbType="NChar(10) NOT NULL", CanBeNull=false)]
 		public string manv
 		{
 			get

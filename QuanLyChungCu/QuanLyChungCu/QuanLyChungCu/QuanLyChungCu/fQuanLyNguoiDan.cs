@@ -90,30 +90,39 @@ namespace QuanLyChungCu
                 case "Thêm":
                     {
                         if (PropertieConst.quyen.Trim() == "user")
-                            MessageBox.Show("Bạn không có quyền hạn đề thực hiện việc này !", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning); if (isThem || isSua)
                         {
+                            MessageBox.Show("Bạn không có quyền hạn đề thực hiện việc này !", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
+                            
+                        if (isThem || isSua)
+                            return;
+
                         Them();
                         break;
                     }
                 case "Xóa":
                     {
                         if (PropertieConst.quyen.Trim() == "user" || PropertieConst.quyen.Trim() == "manager")
-                            MessageBox.Show("Bạn không có quyền hạn đề thực hiện việc này !", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning); if (isThem || isSua)
                         {
+                            MessageBox.Show("Bạn không có quyền hạn đề thực hiện việc này !", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
+                        if (isThem || isSua)
+                            return;
                         Xoa();
                         break;
                     }
                 case "Sửa":
                     {
                         if (PropertieConst.quyen.Trim() == "user")
-                            MessageBox.Show("Bạn không có quyền hạn đề thực hiện việc này !", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning); if (isThem || isSua)
                         {
+                            MessageBox.Show("Bạn không có quyền hạn đề thực hiện việc này !", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
+                        if (isThem || isSua)
+                            return;
+
                         Sua();
                         break;
                     }
@@ -153,11 +162,12 @@ namespace QuanLyChungCu
                     LoadData();
                     isReload = false;
                 }
-            }catch
-            {
-                
             }
-            
+            catch
+            {
+
+            }
+
         }
         private void Sua()
         {
@@ -197,12 +207,12 @@ namespace QuanLyChungCu
             try
             {
                 //DateTime dt = Convert.ToDateTime(dtNgaySinh.)
-                if(isSua)
+                if (isSua)
                 {
                     context.capNhatNguoiDan(txtMa.Text.Trim(), txtHoVaTen.Text.Trim(), cboGioiTinh.Text.Trim(), dtNgaySinh.DateTime, txtDanToc.Text.Trim(), txtTonGiao.Text.Trim(), txtNgheNghiep.Text.Trim(), txtSoDienThoai.Text.Trim(), cboCanHo.Text.Trim());
                     isSua = false;
                 }
-                if(isThem)
+                if (isThem)
                 {
                     context.themNguoiDan(txtMa.Text.Trim(), txtHoVaTen.Text.Trim(), cboGioiTinh.Text.Trim(), dtNgaySinh.DateTime, txtDanToc.Text.Trim(), txtTonGiao.Text.Trim(), txtNgheNghiep.Text.Trim(), txtSoDienThoai.Text.Trim(), cboCanHo.Text.Trim());
                     isThem = false;
@@ -212,7 +222,7 @@ namespace QuanLyChungCu
                 isReload = false;
                 btnHuy_Click(null, null);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 string s = ex.Message.ToString();
                 MessageBox.Show("Thông tin không nhập vào không chính xác !", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);

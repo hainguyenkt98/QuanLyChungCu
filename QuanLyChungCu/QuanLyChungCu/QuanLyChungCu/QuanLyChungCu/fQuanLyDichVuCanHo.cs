@@ -50,8 +50,8 @@ namespace QuanLyChungCu
                 row[3] = item.ten.ToString().Trim();
                 row[4] = item.chiphi.ToString().Trim();
                 dt.Rows.Add(row);
-            } 
-            
+            }
+
             gridControl.DataSource = dt;
             gridView1.Columns[0].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             gridView1.Columns[1].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -73,30 +73,41 @@ namespace QuanLyChungCu
                 case "Thêm":
                     {
                         if (PropertieConst.quyen.Trim() == "user")
-                            MessageBox.Show("Bạn không có quyền hạn đề thực hiện việc này !", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning); if (isThem || isSua)
                         {
+                            MessageBox.Show("Bạn không có quyền hạn đề thực hiện việc này !", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
+                        if (isThem || isSua)
+
+                            return;
+
                         Them();
                         break;
                     }
                 case "Xóa":
                     {
                         if (PropertieConst.quyen.Trim() == "user" || PropertieConst.quyen.Trim() == "manager")
-                            MessageBox.Show("Bạn không có quyền hạn đề thực hiện việc này !", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning); if (isThem || isSua)
                         {
+                            MessageBox.Show("Bạn không có quyền hạn đề thực hiện việc này !", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
+                        if (isThem || isSua)
+
+                            return;
+
                         Xoa();
                         break;
                     }
                 case "Sửa":
                     {
                         if (PropertieConst.quyen.Trim() == "user")
-                            MessageBox.Show("Bạn không có quyền hạn đề thực hiện việc này !", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning); if (isThem || isSua)
                         {
+                            MessageBox.Show("Bạn không có quyền hạn đề thực hiện việc này !", "Cảnh báo !", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
+                        if (isThem || isSua)
+                            return;
+
                         Sua();
                         break;
                     }
@@ -171,18 +182,28 @@ namespace QuanLyChungCu
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (isSua)
+            try
             {
-                string maCanHo = cboMaDichVu.Text.Trim();
-                string maDichVu = cboMaCanHo.Text.Trim();
-                context.capNhatCanHoDichVu(maCanHo, maDichVu);
+                if (isSua)
+                {
+                    string maCanHo = cboMaDichVu.Text.Trim();
+                    string maDichVu = cboMaCanHo.Text.Trim();
+                    context.capNhatCanHoDichVu(maCanHo, maDichVu);
+                    LoadData();
+                }
+                if (isThem)
+                {
+                    string maCanHo = cboMaCanHo.Text.Trim();
+                    string maDichVu = cboMaDichVu.Text.Trim();
+                    context.themCanHoDichVu(maCanHo, maDichVu);
+                    LoadData();
+                }
             }
-            if (isThem)
+            catch (Exception ex)
             {
-                string maCanHo = cboMaCanHo.Text.Trim();
-                string maDichVu = cboMaDichVu.Text.Trim();
-                context.themCanHoDichVu(maCanHo, maDichVu);
+                MessageBox.Show("Thông tin không nhập vào không chính xác !", "Thông báo !", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
