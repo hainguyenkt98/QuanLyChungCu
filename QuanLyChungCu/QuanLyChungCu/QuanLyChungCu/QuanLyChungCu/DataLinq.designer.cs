@@ -220,13 +220,6 @@ namespace QuanLyChungCu
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.themNhanVien")]
-		public int themNhanVien([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string gioitinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaysinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string diachi, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string sdt, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maquanli, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string machucvu)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, ten, gioitinh, ngaysinh, diachi, sdt, maquanli, machucvu);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.xoaCanHo")]
 		public int xoaCanHo([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma)
 		{
@@ -337,6 +330,13 @@ namespace QuanLyChungCu
 		public System.Nullable<int> laySoTang()
 		{
 			return ((System.Nullable<int>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod()))).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.themNhanVien")]
+		public int themNhanVien([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string ma, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string ten, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string gioitinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaysinh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string diachi, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string sdt, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string maquanli, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string machucvu)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ma, ten, gioitinh, ngaysinh, diachi, sdt, maquanli, machucvu);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	

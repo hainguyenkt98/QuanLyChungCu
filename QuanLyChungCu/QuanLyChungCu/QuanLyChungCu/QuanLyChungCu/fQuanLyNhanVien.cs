@@ -240,13 +240,22 @@ namespace QuanLyChungCu
             {
                
                 if (isSua)
-                {
+                {                
                     context.capnhapNhanVien(txtMa.Text.Trim(), txtTen.Text.Trim(), cboGioiTinh.Text.Trim(), dtNgaySinh.DateTime, txtDiaChi.Text.Trim(), txtSodt.Text.Trim(), cboNguoiQuanLi.Text.Trim(), cboChucVu.Text.Trim());
                     isSua = false;
                 }
                 if (isThem)
                 {
-                    context.themNhanVien(txtMa.Text.Trim(), txtTen.Text.Trim(), cboGioiTinh.Text.Trim(), dtNgaySinh.DateTime, txtDiaChi.Text.Trim(), txtSodt.Text.Trim(), cboNguoiQuanLi.Text.Trim(), cboChucVu.Text.Trim());
+                    string maQuanLy = "";
+                    try
+                    {
+                        maQuanLy = cboNguoiQuanLi.Text.Trim();
+                    }
+                    catch
+                    {
+                        maQuanLy = "";
+                    }
+                    context.themNhanVien(txtMa.Text.Trim(), txtTen.Text.Trim(), cboGioiTinh.Text.Trim(), dtNgaySinh.DateTime, txtDiaChi.Text.Trim(), txtSodt.Text.Trim(), maQuanLy, cboChucVu.Text.Trim());
                     isThem = false;
                     txtMa.Enabled = false;
                 }

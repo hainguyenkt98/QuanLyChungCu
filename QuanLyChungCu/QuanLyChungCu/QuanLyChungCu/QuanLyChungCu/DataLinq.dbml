@@ -164,17 +164,6 @@
     <Parameter Name="macanho" Type="System.String" DbType="NChar(10)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.themNhanVien" Method="themNhanVien">
-    <Parameter Name="ma" Type="System.String" DbType="NChar(10)" />
-    <Parameter Name="ten" Type="System.String" DbType="NChar(30)" />
-    <Parameter Name="gioitinh" Type="System.String" DbType="NChar(10)" />
-    <Parameter Name="ngaysinh" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="diachi" Type="System.String" DbType="NChar(30)" />
-    <Parameter Name="sdt" Type="System.String" DbType="NChar(10)" />
-    <Parameter Name="maquanli" Type="System.String" DbType="NChar(10)" />
-    <Parameter Name="machucvu" Type="System.String" DbType="NChar(10)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.xoaCanHo" Method="xoaCanHo">
     <Parameter Name="ma" Type="System.String" DbType="NChar(10)" />
     <Return Type="System.Int32" />
@@ -314,6 +303,17 @@
     </ElementType>
   </Function>
   <Function Name="dbo.laySoTang" Method="laySoTang" IsComposable="true">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.themNhanVien" Method="themNhanVien">
+    <Parameter Name="ma" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="ten" Type="System.String" DbType="NChar(30)" />
+    <Parameter Name="gioitinh" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="ngaysinh" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="diachi" Type="System.String" DbType="NChar(30)" />
+    <Parameter Name="sdt" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="maquanli" Type="System.String" DbType="NChar(10)" />
+    <Parameter Name="machucvu" Type="System.String" DbType="NChar(10)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

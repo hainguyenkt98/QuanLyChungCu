@@ -38,13 +38,13 @@
             this.thônTinPhầnMềmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.pnNavBar = new DevExpress.XtraEditors.PanelControl();
+            this.btnQuanLyTaiKhoan = new DevExpress.XtraEditors.SimpleButton();
             this.btnCanHo_DichVu = new DevExpress.XtraEditors.SimpleButton();
             this.btnDangXuat = new DevExpress.XtraEditors.SimpleButton();
             this.btnUser = new DevExpress.XtraEditors.SimpleButton();
             this.btnCanHo = new DevExpress.XtraEditors.SimpleButton();
             this.btnNhanVien = new DevExpress.XtraEditors.SimpleButton();
             this.btnNguoiDan = new DevExpress.XtraEditors.SimpleButton();
-            this.btnQuanLyTaiKhoan = new DevExpress.XtraEditors.SimpleButton();
             this.menuFunction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnNavBar)).BeginInit();
@@ -79,7 +79,7 @@
             // đăngNhậpToolStripMenuItem
             // 
             this.đăngNhậpToolStripMenuItem.Name = "đăngNhậpToolStripMenuItem";
-            this.đăngNhậpToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.đăngNhậpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.đăngNhậpToolStripMenuItem.Text = "Đăng nhập";
             this.đăngNhậpToolStripMenuItem.Click += new System.EventHandler(this.đăngNhậpToolStripMenuItem_Click);
             // 
@@ -87,15 +87,16 @@
             // 
             this.đăngXuấtToolStripMenuItem.Enabled = false;
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.thoátToolStripMenuItem.Text = "Thoát";
+            this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
             // thônTinPhầnMềmToolStripMenuItem
             // 
@@ -129,6 +130,17 @@
             this.pnNavBar.Name = "pnNavBar";
             this.pnNavBar.Size = new System.Drawing.Size(1148, 64);
             this.pnNavBar.TabIndex = 1;
+            // 
+            // btnQuanLyTaiKhoan
+            // 
+            this.btnQuanLyTaiKhoan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnQuanLyTaiKhoan.ImageOptions.Image")));
+            this.btnQuanLyTaiKhoan.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnQuanLyTaiKhoan.Location = new System.Drawing.Point(721, 3);
+            this.btnQuanLyTaiKhoan.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.btnQuanLyTaiKhoan.Name = "btnQuanLyTaiKhoan";
+            this.btnQuanLyTaiKhoan.Size = new System.Drawing.Size(70, 60);
+            this.btnQuanLyTaiKhoan.TabIndex = 8;
+            this.btnQuanLyTaiKhoan.Click += new System.EventHandler(this.btnQuanLyTaiKhoan_Click);
             // 
             // btnCanHo_DichVu
             // 
@@ -200,17 +212,6 @@
             this.btnNguoiDan.Size = new System.Drawing.Size(70, 60);
             this.btnNguoiDan.TabIndex = 0;
             this.btnNguoiDan.Click += new System.EventHandler(this.btnNguoiDan_Click);
-            // 
-            // btnQuanLyTaiKhoan
-            // 
-            this.btnQuanLyTaiKhoan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnQuanLyTaiKhoan.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.btnQuanLyTaiKhoan.Location = new System.Drawing.Point(721, 3);
-            this.btnQuanLyTaiKhoan.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.btnQuanLyTaiKhoan.Name = "btnQuanLyTaiKhoan";
-            this.btnQuanLyTaiKhoan.Size = new System.Drawing.Size(70, 60);
-            this.btnQuanLyTaiKhoan.TabIndex = 8;
-            this.btnQuanLyTaiKhoan.Click += new System.EventHandler(this.btnQuanLyTaiKhoan_Click);
             // 
             // fQuanLyChucNang
             // 

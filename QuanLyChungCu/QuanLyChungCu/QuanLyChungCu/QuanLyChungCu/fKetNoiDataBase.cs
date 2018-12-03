@@ -60,17 +60,17 @@ namespace QuanLyChungCu
         private async void ScanIP()
         {
 
-            string pingIP = "";
-            string baseIP = "";
-            string hostName = Dns.GetHostName(); // Retrive the Name of HOST  
-            for (int w = 0; w < Dns.GetHostByName(hostName).AddressList.Count(); w++)
+            string pingIP = "";//Ip de ping
+            string baseIP = "";// Net id
+            string hostName = Dns.GetHostName(); // Ten may chu
+            for (int w = 0; w < Dns.GetHostByName(hostName).AddressList.Count(); w++)//Quet tung vung man
             {
-                string myIP = Dns.GetHostByName(hostName).AddressList[w].ToString();
+                string myIP = Dns.GetHostByName(hostName).AddressList[w].ToString();//Dia chi may chu trong tung vung mang
                 string submetMarsk = Dns.GetHostByName(hostName).AddressList[w].ToString();
-                int coutDot = 0;
+                int coutDot = 0;//Dem so dau cham trong IP
 
                 string firstOctet = "";
-                for (int i = 0; i < myIP.Length; i++)
+                for (int i = 0; i < myIP.Length; i++)//Lay octet dau tien
                 {
                     if (myIP[i].Equals('.'))
                     {
@@ -83,14 +83,14 @@ namespace QuanLyChungCu
                     }
                 }
 
-                firstOctet = firstOctet.Substring(0, firstOctet.Length - 1);
+                firstOctet = firstOctet.Substring(0, firstOctet.Length - 1);//Bo dau cham
 
 
 
                 if (classIP(firstOctet) == "A")
                 {
                     coutDot = 0;
-                    for (int i = 0; i < myIP.Length; i++)
+                    for (int i = 0; i < myIP.Length; i++)//Lay NetID
                     {
                         if (myIP[i].Equals('.'))
                         {
@@ -104,26 +104,26 @@ namespace QuanLyChungCu
                     }
 
 
-                    for (int e = 0; e <= 255; e++)
+                    for (int e = 0; e <= 255; e++)//Quet octet thu 2
                     {
                         string secondOctet = e.ToString();
 
-                        for (int i = 0; i <= 255; i++)
+                        for (int i = 0; i <= 255; i++)//QUet octet thu 3
                         {
                             string thirdOctet = i.ToString();
                             pingIP = "";
 
 
-                            for (int j = 1; j < 255; j++)
+                            for (int j = 1; j < 255; j++)//Quet octet cuoi dung de nhan ip va Ping
                             {
-                                pingIP = baseIP + secondOctet + "." + thirdOctet + "." + j.ToString();
+                                pingIP = baseIP + secondOctet + "." + thirdOctet + "." + j.ToString();//Cong chuoi de duoc IP
                                 Ping ping = new Ping();
                                 PingReply pingresult = await ping.SendPingAsync(pingIP, 100);
                                 if (pingresult.Status.ToString() == "Success")
                                 {
-                                    if (cboIP.InvokeRequired)
+                                    if (cboIP.InvokeRequired)//Hoi thread UI co can cap phep khong
                                     {
-                                        cboIP.Invoke((MethodInvoker)delegate ()
+                                        cboIP.Invoke((MethodInvoker)delegate ()// Xin tai nguyen de chinh sua
                                         {
                                             cboIP.Items.Add(pingIP);
                                         });
@@ -222,7 +222,7 @@ namespace QuanLyChungCu
             }
 
         }
-        private string classIP(string firstOctet)
+        private string classIP(string firstOctet)//Kiem tra xem ip thuoc lop nao
         {
             int num = Convert.ToInt32(firstOctet);
             if (num >= 0 && num <= 127)

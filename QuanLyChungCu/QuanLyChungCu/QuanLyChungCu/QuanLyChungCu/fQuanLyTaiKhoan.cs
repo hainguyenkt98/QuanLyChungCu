@@ -100,6 +100,11 @@ namespace QuanLyChungCu
                 string ma = gridView1.GetRowCellValue(indexRow, "Mã").ToString().Trim();
                 string tendangnhap = gridView1.GetRowCellValue(indexRow, "Tên đăng nhập").ToString().Trim();
                 string manv = gridView1.GetRowCellValue(indexRow, "Mã nhân viên").ToString().Trim();
+                if(tendangnhap.Trim() == PropertieConst.accountDB.Trim())
+                {
+                    MessageBox.Show("Không được xóa tài khoản hiện tại !", "Nhắc nhở !", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 context.xoaTaiKhoan(ma, tendangnhap, manv);
             }
             catch (Exception ex)
